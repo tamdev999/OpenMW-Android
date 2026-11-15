@@ -134,19 +134,9 @@ if (${ARCH} STREQUAL "x86")
         set(libjpeg_turbo_flags ${libjpeg_turbo_flags} --without-simd)
 endif()
 
-ExternalProject_Add(bzip2
-
-        URL https://github.com/Duron27/bzip2/archive/refs/tags/v1.tar.gz
-        #URL_HASH SHA256=
-        DOWNLOAD_DIR ${download_dir}
-
-        CONFIGURE_COMMAND ${wrapper_command} cmake <SOURCE_DIR>
-        ${COMMON_CMAKE_ARGS}
-
-        BUILD_COMMAND ${wrapper_command} $(MAKE)
-
-        INSTALL_COMMAND ${wrapper_command} $(MAKE) install
-)
+# bzip2: removed — the upstream Duron27/bzip2 repo no longer exists and
+# nothing in this build graph links libbz2 directly.  Boost.iostreams uses
+# the system bzip2 installed by the host package manager.
 
 ExternalProject_Add(libjpeg-turbo
         URL https://sourceforge.net/projects/libjpeg-turbo/files/${LIBJPEG_TURBO_VERSION}/libjpeg-turbo-${LIBJPEG_TURBO_VERSION}.tar.gz
@@ -612,8 +602,7 @@ set(OPENMW_PATCH
         python3 ${CMAKE_SOURCE_DIR}/patches/openmw051-final/apply-android-graphics-followup.py <SOURCE_DIR> &&
         python3 ${CMAKE_SOURCE_DIR}/patches/openmw051-final/apply-android-graphics-followup2.py <SOURCE_DIR> &&
         python3 ${CMAKE_SOURCE_DIR}/patches/openmw051-final/apply-android-graphics-followup3.py <SOURCE_DIR> &&
-        python3 ${CMAKE_SOURCE_DIR}/patches/openmw051-final/apply-android-graphics-followup4.py <SOURCE_DIR> &&
-        python3 ${CMAKE_SOURCE_DIR}/patches/openmw051-final/apply-android-perf-log.py <SOURCE_DIR>
+        python3 ${CMAKE_SOURCE_DIR}/patches/openmw051-final/apply-android-graphics-followup4.py <SOURCE_DIR>
 )
 ExternalProject_Add(openmw
         DEPENDS boost openal osg mygui ffmpeg sdl2 bullet lz4 luajit libicu

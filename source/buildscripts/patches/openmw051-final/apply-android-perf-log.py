@@ -82,13 +82,15 @@ def replace_once(text: str, old: str, new: str, label: str) -> str:
 text = read(engine_hpp)
 
 if MARKER not in text:
+    # Anchor on the end of the file: the class-closing };, namespace }, and #endif.
+    # This is unique and unaffected by other patchers.
     old_hpp = (
-        "    int mGlMaxTextureImageUnits = 0;\n"
-        "};\n"
-        "} // namespace OMW"
+        "    };\n"
+        "}\n"
+        "\n"
+        "#endif /* ENGINE_H */"
     )
     new_hpp = (
-        "    int mGlMaxTextureImageUnits = 0;\n"
         "\n"
         "#ifdef ANDROID\n"
         "    // OPENMW_ANDROID_PHASE1_PERF_LOG\n"
@@ -96,8 +98,10 @@ if MARKER not in text:
         "    std::unique_ptr<PerfLog> mPerfLog;\n"
         "    std::string mPerfLogPendingCell;\n"
         "#endif\n"
-        "};\n"
-        "} // namespace OMW"
+        "    };\n"
+        "}\n"
+        "\n"
+        "#endif /* ENGINE_H */"
     )
     text = replace_once(text, old_hpp, new_hpp, "engine.hpp / PerfLog member")
     write(engine_hpp, text)
@@ -352,9 +356,16 @@ if MARKER not in text:
     text = replace_once(text, old_loop, new_loop, "engine.cpp / PerfLog header + env")
 
     # 2E — flush at exit
-    old_exit = "    mLuaWorker->join();\n\n    // Save user settings\n"
+    # The runtime-baseline patcher inserted Android g_viewer.release() code between
+    # mLuaWorker->join() and "// Save user settings". Anchor on the text that now
+    # immediately precedes "// Save user settings".
+    old_exit = (
+        "#endif\n"
+        "\n"
+        "    // Save user settings\n"
+    )
     new_exit = (
-        "    mLuaWorker->join();\n"
+        "#endif\n"
         "\n"
         "#ifdef ANDROID\n"
         "    if (mPerfLog) { mPerfLog->flush(); }\n"
@@ -368,12 +379,15 @@ if MARKER not in text:
     # 2F — per-frame hook at the bottom of frame()
     old_frame = (
         "    mViewer->renderingTraversals();\n"
+        "\n"
         "    mLuaWorker->finishUpdate(frameStart, frameNumber, *stats);\n"
+        "\n"
         "    return true;\n"
         "}"
     )
     new_frame = (
         "    mViewer->renderingTraversals();\n"
+        "\n"
         "    mLuaWorker->finishUpdate(frameStart, frameNumber, *stats);\n"
         "\n"
         "#ifdef ANDROID\n"

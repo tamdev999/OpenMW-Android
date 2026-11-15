@@ -81,14 +81,56 @@ ls -lh source/app/build/outputs/apk/debug/app-debug.apk
 source/buildscripts/toolchain/arm64/bin/aarch64-linux-android-clang --version
 ```
 
-### 1.4 Build status
+### 1.4 Build status — PARTIAL SUCCESS
 
-**BLOCKED — WSL has no installed distributions on the build machine.**
+**Native library built. APK blocked by release gate.**
 
-`wsl --status` returned: *"Windows Subsystem for Linux has no installed distributions."*
+The native arm64 build completed on Ubuntu 22.04 (WSL2), NDK r26b, API 21.
+LTO was dropped — the LTO link pass exceeds the 13 GB WSL2 RAM limit.
+`apply-android-perf-log.py` was unwired from OPENMW_PATCH per instruction.
 
-The build requires Linux or WSL. No APK sha256 or file size can be reported
-until the user runs the commands in §1.3 on a Linux machine.
+| Output | sha256 |
+|---|---|
+| `libopenmw.so` (stripped, no LTO) | `39292c2f2d37aa7057c1560bc00785d591635f59ba1570730a936e9f2286d1cb` |
+| All 6 jniLibs deployed | ✓ |
+| Engine resources + version marker deployed | ✓ |
+| `openmw-perf.apk` | **NOT BUILT** — see §1.5 |
+
+**Fixes applied (all via patchers, not direct source edits except where noted):**
+
+| Fix | Cause |
+|---|---|
+| Removed `bzip2` ExternalProject | Duron27/bzip2 repo deleted upstream. `libbz2-dev` from apt used instead. |
+| `apply-perf-counters.py` P1 anchor: added blank line | GitHub raw API returned truncated `program.c`; actual source has blank line between `DBG(printf...)` and assignment. |
+| `apply-android-perf-log.py` unwired from OPENMW_PATCH | Multiple anchor failures caused by preceding patchers modifying engine.cpp/hpp. Patcher removed per user instruction. File kept in repo. |
+| ICU host build pre-built manually | `setup-icu.sh` skips configure/make if zip already present; host build must be done explicitly before cross-configure. |
+
+### 1.5 APK — blocked by Andiweli release gate
+
+`verifyOpenMwPayload` in `app/build.gradle` requires `android_omwfx/*.omwfx` files
+that are **not committed** to the repo at commit 14c3546. They are produced only by
+Andiweli's Windows pipeline (`tools\build-openmw-051-runtime.ps1`).
+
+**To test on the Thor, replace `libopenmw.so` in the existing release APK:**
+```powershell
+# Pull the APK currently installed on the device
+adb pull /data/app/$(adb shell pm path org.libsdl.app | cut -d: -f2 | tr -d '\r'| sed 's|/base.apk||') existing.apk
+# or if the above fails:
+adb shell pm path org.libsdl.app  # note the path, then:
+adb pull <path>/base.apk existing.apk
+
+# Swap libopenmw.so into it
+# (requires python or apktool; simplest with 7-Zip or python zipfile)
+python3 -c "
+import zipfile, shutil
+shutil.copy('existing.apk', 'openmw-perf.apk')
+with zipfile.ZipFile('openmw-perf.apk', 'a') as z:
+    z.write(r'source\app\src\main\jniLibs\arm64-v8a\libopenmw.so',
+            'lib/arm64-v8a/libopenmw.so')
+"
+# Re-sign with the debug keystore
+jarsigner -keystore %USERPROFILE%\.android\debug.keystore -storepass android openmw-perf.apk androiddebugkey
+```
 
 ### 1.5 APK installation safety note
 

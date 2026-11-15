@@ -556,9 +556,12 @@ if MARKER not in text:
         "program.c / omwperf include",
     )
 
+    # Exact text from sisah2/gl4es@5ac069d program.c lines 820-824:
+    # there is a blank line between the DBG printf and the assignment.
     old_p1 = (
         "    noerrorShim();\n"
         "    DBG(printf(\"program id=%d\\n\", glprogram->id);)\n"
+        "\n"
         "    glstate->glsl->program=glprogram->id;\n"
         "    glstate->glsl->glprogram=glprogram;\n"
         "}"
@@ -569,6 +572,7 @@ if MARKER not in text:
         "    /* OPENMW_ANDROID_PHASE1_GL4ES_PERF_COUNTERS P1 */\n"
         "    if (glstate->glsl->program != glprogram->id)\n"
         "        omwperf_live.program_switches++;\n"
+        "\n"
         "    glstate->glsl->program=glprogram->id;\n"
         "    glstate->glsl->glprogram=glprogram;\n"
         "}"
