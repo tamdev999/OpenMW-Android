@@ -360,7 +360,8 @@ ExternalProject_Add(gl4es
         #URL_HASH ${GL4ES_HASH}
         DOWNLOAD_DIR ${download_dir}
 
-        PATCH_COMMAND python3 ${CMAKE_SOURCE_DIR}/patches/gl4es/apply-powervr-packed-depth-stencil.py <SOURCE_DIR>
+        PATCH_COMMAND python3 ${CMAKE_SOURCE_DIR}/patches/gl4es/apply-powervr-packed-depth-stencil.py <SOURCE_DIR> &&
+        python3 ${CMAKE_SOURCE_DIR}/patches/gl4es/apply-perf-counters.py <SOURCE_DIR>
 
         BUILD_COMMAND ${wrapper_command} ndk-build
         ${COMMON_NDK_BUILD_FLAGS}
@@ -611,7 +612,8 @@ set(OPENMW_PATCH
         python3 ${CMAKE_SOURCE_DIR}/patches/openmw051-final/apply-android-graphics-followup.py <SOURCE_DIR> &&
         python3 ${CMAKE_SOURCE_DIR}/patches/openmw051-final/apply-android-graphics-followup2.py <SOURCE_DIR> &&
         python3 ${CMAKE_SOURCE_DIR}/patches/openmw051-final/apply-android-graphics-followup3.py <SOURCE_DIR> &&
-        python3 ${CMAKE_SOURCE_DIR}/patches/openmw051-final/apply-android-graphics-followup4.py <SOURCE_DIR>
+        python3 ${CMAKE_SOURCE_DIR}/patches/openmw051-final/apply-android-graphics-followup4.py <SOURCE_DIR> &&
+        python3 ${CMAKE_SOURCE_DIR}/patches/openmw051-final/apply-android-perf-log.py <SOURCE_DIR>
 )
 ExternalProject_Add(openmw
         DEPENDS boost openal osg mygui ffmpeg sdl2 bullet lz4 luajit libicu
