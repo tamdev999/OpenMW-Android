@@ -81,56 +81,61 @@ ls -lh source/app/build/outputs/apk/debug/app-debug.apk
 source/buildscripts/toolchain/arm64/bin/aarch64-linux-android-clang --version
 ```
 
-### 1.4 Build status — PARTIAL SUCCESS
-
-**Native library built. APK blocked by release gate.**
+### 1.4 Build record
 
 The native arm64 build completed on Ubuntu 22.04 (WSL2), NDK r26b, API 21.
-LTO was dropped — the LTO link pass exceeds the 13 GB WSL2 RAM limit.
-`apply-android-perf-log.py` was unwired from OPENMW_PATCH per instruction.
+LTO dropped — link peak exceeds WSL2 13 GB RAM limit.
+`apply-android-perf-log.py` unwired from OPENMW_PATCH per instruction.
 
 | Output | sha256 |
 |---|---|
 | `libopenmw.so` (stripped, no LTO) | `39292c2f2d37aa7057c1560bc00785d591635f59ba1570730a936e9f2286d1cb` |
-| All 6 jniLibs deployed | ✓ |
-| Engine resources + version marker deployed | ✓ |
-| `openmw-perf.apk` | **NOT BUILT** — see §1.5 |
+| `openmw-perf-debug.apk` (47.7 MB) | `9afddc27d0efb5769a38a26d6d7ea3dbb1574ab010cd3252b7445bf9054c1f10` |
+| APK path | `app/build/outputs/apk/mainline/debug/app-mainline-debug.apk` |
 
-**Fixes applied (all via patchers, not direct source edits except where noted):**
+**Build fixes applied:**
 
 | Fix | Cause |
 |---|---|
 | Removed `bzip2` ExternalProject | Duron27/bzip2 repo deleted upstream. `libbz2-dev` from apt used instead. |
-| `apply-perf-counters.py` P1 anchor: added blank line | GitHub raw API returned truncated `program.c`; actual source has blank line between `DBG(printf...)` and assignment. |
-| `apply-android-perf-log.py` unwired from OPENMW_PATCH | Multiple anchor failures caused by preceding patchers modifying engine.cpp/hpp. Patcher removed per user instruction. File kept in repo. |
-| ICU host build pre-built manually | `setup-icu.sh` skips configure/make if zip already present; host build must be done explicitly before cross-configure. |
+| `apply-perf-counters.py` P1 anchor: added blank line | GitHub raw API truncated `program.c`; real source has blank line before assignment. |
+| `apply-android-perf-log.py` unwired from OPENMW_PATCH | Multiple anchor failures caused by preceding patchers modifying engine.cpp/hpp. |
+| ICU host build pre-built manually | `setup-icu.sh` skips configure/make if zip already present; must be done explicitly. |
 
-### 1.5 APK — blocked by Andiweli release gate
+### 1.5 Assets taken from release APK
 
-`verifyOpenMwPayload` in `app/build.gradle` requires `android_omwfx/*.omwfx` files
-that are **not committed** to the repo at commit 14c3546. They are produced only by
-Andiweli's Windows pipeline (`tools\build-openmw-051-runtime.ps1`).
+The `assets/` folder is git-ignored and not built by the C++ pipeline.
+Downloaded `OpenMW.0.51-14.apk` (the matching release, 42 MB) and extracted:
 
-**To test on the Thor, replace `libopenmw.so` in the existing release APK:**
-```powershell
-# Pull the APK currently installed on the device
-adb pull /data/app/$(adb shell pm path org.libsdl.app | cut -d: -f2 | tr -d '\r'| sed 's|/base.apk||') existing.apk
-# or if the above fails:
-adb shell pm path org.libsdl.app  # note the path, then:
-adb pull <path>/base.apk existing.apk
+| Source in APK | Destination | Reason |
+|---|---|---|
+| `assets/android_omwfx/gateh_bloom051.omwfx` | `app/src/main/assets/android_omwfx/` | Not in repo; Gradle gate requires it |
+| `assets/android_omwfx/godrays_android_051_depthfixed_vivid.omwfx` | same | same |
+| `assets/android_omwfx/lensflare_android_051_rayocc.omwfx` | same | same |
+| `assets/android_omwfx/rainlens_android_051_v12_dense.omwfx` | same | same |
+| `assets/android_omwfx/wetworld_android_051_weather.omwfx` | same | same |
+| `assets/libopenmw/resources/shaders/**` (64 files) | `app/src/main/assets/libopenmw/resources/shaders/` | Our build.sh output shaders were missing `OPENMW_ANDROID_051_WATER_PROJECTIVE_SCREEN_COORDS` applied by `apply-android-graphics-followup.py`; release APK had the fully-patched versions |
 
-# Swap libopenmw.so into it
-# (requires python or apktool; simplest with 7-Zip or python zipfile)
-python3 -c "
-import zipfile, shutil
-shutil.copy('existing.apk', 'openmw-perf.apk')
-with zipfile.ZipFile('openmw-perf.apk', 'a') as z:
-    z.write(r'source\app\src\main\jniLibs\arm64-v8a\libopenmw.so',
-            'lib/arm64-v8a/libopenmw.so')
-"
-# Re-sign with the debug keystore
-jarsigner -keystore %USERPROFILE%\.android\debug.keystore -storepass android openmw-perf.apk androiddebugkey
+All other assets (defaults.bin, openmw.base.cfg, engine-version.txt,
+gamecontrollerdb.txt, 3rdparty-licenses.txt, resources/version,
+resources/vfs/shaders/adjustments.omwfx) came from the build.sh output
+already on disk.
+
+### 1.6 APK installation note
+
+**Back up saves and config before installing.** The debug APK is signed with
+a different key than the release, so Android requires an uninstall first,
+which deletes saves and config from internal storage.
+
+```bash
+# Back up first:
+adb pull "/sdcard/Android/data/com.ast.openmw/files/OpenMW/" ./openmw_backup/
+
+# Then uninstall and install:
+adb uninstall org.libsdl.app
+adb install app/build/outputs/apk/mainline/debug/app-mainline-debug.apk
 ```
+
 
 ### 1.5 APK installation safety note
 
