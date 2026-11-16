@@ -2,8 +2,8 @@
 
 **Branch:** `feat/render-scale-sgsr1`  
 **Base:** `perf/phase1-baseline` (OpenMW 0.51.0 Final, GL4ES GLES2 path)  
-**libopenmw.so sha256 (stripped, no LTO):** `8bec8e0876b471ee5e414c451d750e62c78ebfd71f7e54fa425fc27062fb482a`  
-**APK sha256:** `b80ebe633338a51be1279a0a647d8251a5add771e2253f798e2d72e8f8e4641c`  
+**libopenmw.so sha256 (stripped, no LTO):** `5a5b034648935d57eb97d99c6b07a7999fd4b111aa16ce7c508cf4b4c99ce30a`  
+**APK sha256:** `d882b3af15bf90b4be460db1e0d433edc82f47fc0001004b3ba563b26ffda3e8`  
 **APK path:** `app/build/outputs/apk/mainline/debug/app-mainline-debug.apk`
 
 ---
@@ -132,11 +132,29 @@ The scene textures use `LINEAR` / `CLAMP_TO_EDGE` (confirmed in `createObjectsFo
 
 ## 5. Build fixes
 
-One compile error was found and fixed (not a logic change):
+### 5.1 Compile-time fix (original)
+**`pingpongcanvas.cpp:578`** — `static_cast<osg::Texture*>(getTexture())` rejected because `drawImplementation()` is `const`. Fixed with C-style cast, consistent with the existing canvas code.
 
-**`pingpongcanvas.cpp:578`** — `static_cast<osg::Texture*>(getTexture())` rejected because `drawImplementation()` is `const` and `osg::FrameBufferAttachment::getTexture()` returns `const osg::Texture*`. Fixed by using a C-style cast `(osg::Texture*)`, consistent with the same pattern used throughout the existing canvas code (e.g., `attachCloneOfTemplate` at line 231).
+### 5.2 Post-review bug fixes (second commit)
 
-A `sed` command used during development accidentally changed `static_cast<osg::Texture*>(tex->clone(...))` in `attachCloneOfTemplate` to `((osg::Texture*)()tex->clone(...))`. Fixed with a Python script. The final patch was regenerated from the corrected source tree and verified to apply cleanly to a fresh extract (`PATCH_CLEAN_APPLY: 0`).
+**FIX 1 — Viewport override never created (blocking)**  
+`PingPongCull` is in PostProcessor's member initializer list at line 127, **before** the constructor body reads `OPENMW_RENDER_SCALE` at line 162. At construction time `mScaled` is always false, so `isRenderScaled()` returns false and `mViewportStateset` stays null. Scene renders at full resolution into smaller buffers → cropped/zoomed picture.
+
+Fixed in `PingPongCull::operator()`: lazy creation guard at the top of the viewport block. On the first traversal after `mScaled` becomes true the objects are created then and work from that frame forward. The constructor-time check is kept as a no-op redundancy.
+
+Confirmed: the env block (line 162) runs before `createObjectsForFrame()` (line 220). No ordering change was needed there.
+
+**FIX 2 — Gamma lost when scaled**  
+When `mRenderScaled` and gamma != 1.0, the existing `androidGammaPending` path runs, draws a gamma pass to the destination FBO, then the SGSR pass overwrites it without gamma.
+
+Three-part fix:
+- (a) `androidGammaPending` suppressed when `mRenderScaled` — the existing gamma path does not run.
+- (b-sgsr) `androidGamma` uniform added to the SGSR fragment shader; value is applied just before `gl_FragColor`. Uniform added to `mSgsrStateSet` with the same `OPENMW_GAMMA` value parsed in the constructor.
+- (b-bilinear) Both final upscale draws (no-PP branch and after-loop) push `mAndroidGammaStateSet` when it is non-null and bilinear is selected, instead of `mFallbackStateSet`. This gives bilinear+gamma for free using the existing gamma program.
+- Unscaled path is entirely unchanged.
+
+**FIX 3 — Corrupted locale translations**  
+The five locale `strings.xml` files (`de`, `fr`, `pl`, `ru`, `sv`) were rewritten with broken encoding in the first commit. All five were restored from the parent commit (`git checkout 95cd17f~1 -- ...`), preserving all original content. The four new strings (`pref_render_scale`, `pref_render_scale_summary`, `pref_sgsr_sharpness`, `pref_sgsr_sharpness_summary`) were then appended using a Python script that reads and writes UTF-8 without BOM, appending only the new elements before `</resources>`. Cyrillic text verified intact; first bytes confirmed `3C 3F 78` (not `EF BB BF`).
 
 ---
 
