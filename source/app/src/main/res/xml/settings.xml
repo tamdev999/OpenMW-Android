@@ -22,6 +22,8 @@
     <PreferenceCategory android:title="@string/category_performance">
         <ListPreference android:key="gs_framerate_limit" android:title="@string/pref_framerate_limit" android:dialogTitle="@string/pref_framerate_limit" android:entries="@array/pref_framerate_limit_entries" android:entryValues="@array/pref_framerate_limit_values" android:defaultValue="@string/pref_framerate_limit_default" android:summary="@string/gs_framerate_limit_summary" />
         <CheckBoxPreference android:key="pref_nohighp" android:title="@string/pref_nohighp" android:summary="@string/pref_nohighp_summary" />
+        <ListPreference android:key="gs_render_scale" android:title="@string/pref_render_scale" android:dialogTitle="@string/pref_render_scale" android:entries="@array/pref_render_scale_entries" android:entryValues="@array/pref_render_scale_values" android:defaultValue="1.0" android:summary="%s" />
+        <ListPreference android:key="gs_sgsr_sharpness" android:title="@string/pref_sgsr_sharpness" android:dialogTitle="@string/pref_sgsr_sharpness" android:entries="@array/pref_sgsr_sharpness_entries" android:entryValues="@array/pref_sgsr_sharpness_values" android:defaultValue="2.0" android:summary="%s" android:dependency="gs_render_scale" />
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/pref_graphics">
         <Preference android:key="pref_customResolution" android:title="@string/pref_customResolution" />

@@ -70,6 +70,32 @@
     <string name="pref_envLine">Custom Environment Flags</string>
     <string name="pref_nohighp">Medium shader precision</string>
     <string name="pref_nohighp_summary">Uses medium instead of high precision; available only with the Modified shader preset</string>
+    <string name="pref_render_scale">Render Resolution</string>
+    <string name="pref_render_scale_summary">Internal 3D render resolution. Lower values improve performance; SGSR upscales to full screen.</string>
+    <string-array name="pref_render_scale_entries">
+        <item>100% (Native)</item>
+        <item>85%</item>
+        <item>75%</item>
+        <item>67%</item>
+    </string-array>
+    <string-array name="pref_render_scale_values">
+        <item>1.0</item>
+        <item>0.85</item>
+        <item>0.75</item>
+        <item>0.67</item>
+    </string-array>
+    <string name="pref_sgsr_sharpness">SGSR Sharpness</string>
+    <string name="pref_sgsr_sharpness_summary">Edge sharpness for Snapdragon Game Super Resolution upscaling.</string>
+    <string-array name="pref_sgsr_sharpness_entries">
+        <item>Soft</item>
+        <item>Medium</item>
+        <item>Sharp</item>
+    </string-array>
+    <string-array name="pref_sgsr_sharpness_values">
+        <item>1.0</item>
+        <item>1.5</item>
+        <item>2.0</item>
+    </string-array>
     <string name="pref_ui">User Interface</string>
     <string name="pref_textureShrinking">Texture Shrinking</string>
     <string name="pref_textureShrinking_default">none</string>

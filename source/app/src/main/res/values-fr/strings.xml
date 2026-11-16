@@ -1,67 +1,67 @@
-<?xml version='1.0' encoding='utf-8'?>
+﻿<?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">OpenMW</string>
     <string name="general_settings">Configuration</string>
     <string name="start_game_label">Lancer le jeu</string>
     <string name="closeDrawer">Navigation</string>
-    <string name="openDrawer">Navigation fermée</string>
+    <string name="openDrawer">Navigation fermÃ©e</string>
     <string name="game_files">Fichiers du jeu</string>
-    <string name="pref_graphicsLibrary">Bibliothèque API graphique</string>
+    <string name="pref_graphicsLibrary">BibliothÃ¨que API graphique</string>
     <string name="pref_graphicsLibrary_default">gles2</string>
-    <string name="pref_advanced">Avancé</string>
+    <string name="pref_advanced">AvancÃ©</string>
     <string name="pref_graphics">Graphismes</string>
-    <string name="pref_commandLine">Arguments de ligne de commande personnalisés</string>
-    <string name="pref_envLine">Variables d’environnement personnalisées</string>
-    <string name="pref_nohighp">Précision moyenne des shaders</string>
-    <string name="pref_nohighp_summary">Utilise une précision moyenne au lieu d’une précision élevée ; disponible uniquement avec le préréglage de shaders « Modified ».</string>
+    <string name="pref_commandLine">Arguments de ligne de commande personnalisÃ©s</string>
+    <string name="pref_envLine">Variables dâ€™environnement personnalisÃ©es</string>
+    <string name="pref_nohighp">PrÃ©cision moyenne des shaders</string>
+    <string name="pref_nohighp_summary">Utilise une prÃ©cision moyenne au lieu dâ€™une prÃ©cision Ã©levÃ©e ; disponible uniquement avec le prÃ©rÃ©glage de shaders Â« Modified Â».</string>
     <string name="pref_ui">Interface utilisateur</string>
-    <string name="pref_textureShrinking">Réduction des textures</string>
+    <string name="pref_textureShrinking">RÃ©duction des textures</string>
     <string name="pref_textureShrinking_default">none</string>
-    <string name="pref_shadersDir">Préréglages de shaders</string>
+    <string name="pref_shadersDir">PrÃ©rÃ©glages de shaders</string>
     <string name="pref_shadersDir_default">none</string>
     <string name="pref_gamma">Gamma</string>
-    <string name="pref_uiScaling">Facteur d’échelle de l’interface</string>
+    <string name="pref_uiScaling">Facteur dâ€™Ã©chelle de lâ€™interface</string>
     <string name="pref_font_size">Taille de police</string>
     <string name="pref_truetype_fonts_title">Polices nettes</string>
-    <string name="pref_truetype_fonts_summary">Utiliser les polices TrueType d’OpenMW au lieu des polices bitmap d’origine. Elles restent nettes à toutes les tailles de police et échelles d’interface, et sont nécessaires au-delà de la taille 18.</string>
+    <string name="pref_truetype_fonts_summary">Utiliser les polices TrueType dâ€™OpenMW au lieu des polices bitmap dâ€™origine. Elles restent nettes Ã  toutes les tailles de police et Ã©chelles dâ€™interface, et sont nÃ©cessaires au-delÃ  de la taille 18.</string>
     <string name="uiScaling_auto">Auto (%1$.2f)</string>
-    <string name="pref_screen_keeper">Garder l’écran toujours allumé</string>
-    <string name="pref_touchpadSensitivity">Sensibilité du pavé tactile virtuel</string>
-    <string name="action_reset_config">Réinitialiser les fichiers de configuration statiques</string>
-    <string name="action_reset_user_config">Réinitialiser les fichiers de configuration utilisateur</string>
-    <string name="action_reset_user_resources">Réinitialiser les ressources utilisateur</string>
-    <string name="action_reset_screen_controls">Réinitialiser les commandes à l’écran</string>
-    <string name="action_show_screen_controls">Commandes à l’écran</string>
-    <string name="pref_hide_controls">Masquer les boutons à l’écran</string>
+    <string name="pref_screen_keeper">Garder lâ€™Ã©cran toujours allumÃ©</string>
+    <string name="pref_touchpadSensitivity">SensibilitÃ© du pavÃ© tactile virtuel</string>
+    <string name="action_reset_config">RÃ©initialiser les fichiers de configuration statiques</string>
+    <string name="action_reset_user_config">RÃ©initialiser les fichiers de configuration utilisateur</string>
+    <string name="action_reset_user_resources">RÃ©initialiser les ressources utilisateur</string>
+    <string name="action_reset_screen_controls">RÃ©initialiser les commandes Ã  lâ€™Ã©cran</string>
+    <string name="action_show_screen_controls">Commandes Ã  lâ€™Ã©cran</string>
+    <string name="pref_hide_controls">Masquer les boutons Ã  lâ€™Ã©cran</string>
     <string name="pref_handheld_mode_title">Mode portable</string>
-    <string name="pref_handheld_mode_summary">Pour les appareils avec commandes intégrées. Masque les boutons à l’écran. Maintenez L1 pour le menu radial. R1 ouvre le journal. Select fait se reposer, ou ouvre le clavier Android dans un champ de texte. L3 affiche le pointeur dans les menus. Maintenez Select et appuyez sur L3 ou R3 pour l’overlay de performances.</string>
-    <string name="config_was_reset">La configuration statique a été réinitialisée aux valeurs par défaut</string>
-    <string name="user_config_was_reset">La configuration utilisateur a été réinitialisée aux valeurs par défaut</string>
-    <string name="user_resources_was_reset">Les ressources utilisateur ont été réinitialisées aux valeurs par défaut</string>
-    <string name="pref_lang">Paramètres de langue</string>
+    <string name="pref_handheld_mode_summary">Pour les appareils avec commandes intÃ©grÃ©es. Masque les boutons Ã  lâ€™Ã©cran. Maintenez L1 pour le menu radial. R1 ouvre le journal. Select fait se reposer, ou ouvre le clavier Android dans un champ de texte. L3 affiche le pointeur dans les menus. Maintenez Select et appuyez sur L3 ou R3 pour lâ€™overlay de performances.</string>
+    <string name="config_was_reset">La configuration statique a Ã©tÃ© rÃ©initialisÃ©e aux valeurs par dÃ©faut</string>
+    <string name="user_config_was_reset">La configuration utilisateur a Ã©tÃ© rÃ©initialisÃ©e aux valeurs par dÃ©faut</string>
+    <string name="user_resources_was_reset">Les ressources utilisateur ont Ã©tÃ© rÃ©initialisÃ©es aux valeurs par dÃ©faut</string>
+    <string name="pref_lang">ParamÃ¨tres de langue</string>
     <string name="pref_encoding">Langue du jeu</string>
     <string name="pref_encoding_default">win1252</string>
     <string name="btn_opacityPlus">Alpha+</string>
     <string name="btn_opacityMinus">Alpha-</string>
     <string name="btn_sizePlus">Taille+</string>
     <string name="btn_sizeMinus">Taille-</string>
-    <string name="btn_resetControlsLayout">Réinitialiser par défaut</string>
+    <string name="btn_resetControlsLayout">RÃ©initialiser par dÃ©faut</string>
     <string name="pref_physicsFPS2">FPS de la physique</string>
-    <string name="pref_framerate_limit">Limite de fréquence d’images</string>
+    <string name="pref_framerate_limit">Limite de frÃ©quence dâ€™images</string>
     <string name="pref_framerate_limit_default">60</string>
     <string name="pref_physicsFPS2_default">30</string>
     <string name="btn_back">Retour</string>
-    <string name="pref_customResolution">Résolution personnalisée</string>
-    <string name="pref_display_cutout_area">Afficher dans la zone de découpe</string>
+    <string name="pref_customResolution">RÃ©solution personnalisÃ©e</string>
+    <string name="pref_display_cutout_area">Afficher dans la zone de dÃ©coupe</string>
     <string name="mods">Modifications du jeu</string>
-    <string name="action_about">À propos</string>
-    <string name="about_title">À propos d’OpenMW</string>
-    <string name="action_theme">Thème</string>
-    <string name="action_theme_system">Système</string>
+    <string name="action_about">Ã€ propos</string>
+    <string name="about_title">Ã€ propos dâ€™OpenMW</string>
+    <string name="action_theme">ThÃ¨me</string>
+    <string name="action_theme_system">SystÃ¨me</string>
     <string name="action_theme_light">Clair</string>
     <string name="action_theme_dark">Sombre</string>
     <string name="action_theme_oled">Noir/OLED</string>
-    <string name="activity_settings">Paramètres du jeu</string>
+    <string name="activity_settings">ParamÃ¨tres du jeu</string>
     <string name="game_mechanics_activity_settings">Gameplay</string>
     <string name="visuals_activity_settings">Graphismes</string>
     <string name="animations_activity_settings">Animations</string>
@@ -72,140 +72,143 @@
     <string name="activity_mods">Mods</string>
     <string name="tab_plugins">Plugins</string>
     <string name="tab_resources">Ressources</string>
-    <string name="tab_dirs">Répertoires</string>
+    <string name="tab_dirs">RÃ©pertoires</string>
     <string name="tab_groundcover">Couvre-sol</string>
     <string name="data_error_title">Erreur lors de la recherche des fichiers du jeu</string>
-    <string name="data_error_message">Veuillez sélectionner un répertoire contenant à la fois le fichier « Morrowind.ini » et le répertoire « Data Files ».</string>
+    <string name="data_error_message">Veuillez sÃ©lectionner un rÃ©pertoire contenant Ã  la fois le fichier Â« Morrowind.ini Â» et le rÃ©pertoire Â« Data Files Â».</string>
     <string name="permissions_error_title">Aucune autorisation</string>
-    <string name="permissions_error_message">OpenMW a besoin de l’autorisation d’accéder au stockage pour localiser et utiliser les fichiers de Morrowind. Veuillez accorder cette autorisation dans les paramètres de l’application.</string>
-    <string name="ini_error_message">Échec de la conversion du fichier de configuration. Vérifiez que votre fichier « Morrowind.ini » est correctement structuré.</string>
+    <string name="permissions_error_message">OpenMW a besoin de lâ€™autorisation dâ€™accÃ©der au stockage pour localiser et utiliser les fichiers de Morrowind. Veuillez accorder cette autorisation dans les paramÃ¨tres de lâ€™application.</string>
+    <string name="ini_error_message">Ã‰chec de la conversion du fichier de configuration. VÃ©rifiez que votre fichier Â« Morrowind.ini Â» est correctement structurÃ©.</string>
     <string name="no_data_files_title">Fichiers du jeu introuvables</string>
-    <string name="no_data_files_message">Vous devez copier les fichiers de Morrowind sur votre appareil et sélectionner leur chemin dans « Fichiers du jeu » avant de pouvoir lancer le jeu.</string>
+    <string name="no_data_files_message">Vous devez copier les fichiers de Morrowind sur votre appareil et sÃ©lectionner leur chemin dans Â« Fichiers du jeu Â» avant de pouvoir lancer le jeu.</string>
     <string name="category_performance">Performances</string>
     <string name="no_content_files_title">Aucun fichier de contenu !</string>
-    <string name="no_content_files_message">Aucun fichier de contenu n’est activé. Avant de lancer le jeu, vous devez activer au moins un fichier plugin dans le menu « Mods… ».</string>
-    <string name="no_content_files_dismiss">Continuer quand même</string>
+    <string name="no_content_files_message">Aucun fichier de contenu nâ€™est activÃ©. Avant de lancer le jeu, vous devez activer au moins un fichier plugin dans le menu Â« Modsâ€¦ Â».</string>
+    <string name="no_content_files_dismiss">Continuer quand mÃªme</string>
     <string name="configure_mods">Configurer les mods</string>
     <string name="pref_mouse_mode">Mode souris dans les menus</string>
     <string name="pref_mouse_mode_default">hybrid</string>
     <string name="bugsnag_yes">Oui</string>
     <string name="bugsnag_no">Non</string>
-    <string name="bugsnag_policy">Politique de confidentialité</string>
+    <string name="bugsnag_policy">Politique de confidentialitÃ©</string>
     <string name="bugsnag_consent_title">Signaler automatiquement les plantages ?</string>
-    <string name="bugsnag_consent_message">Souhaitez-vous activer le signalement automatique des plantages ?\nEn cas de plantage, certaines données concernant votre appareil, votre configuration et les mods installés seront automatiquement envoyées à Bugsnag. Vous trouverez plus d’informations dans la Politique de confidentialité.\nCe réglage peut être modifié à tout moment depuis le menu.</string>
-    <string name="bugsnag_consent_restart_title">Veuillez redémarrer l’application</string>
-    <string name="bugsnag_consent_restart_message">Vous devez redémarrer l’application pour que ces réglages prennent effet.</string>
+    <string name="bugsnag_consent_message">Souhaitez-vous activer le signalement automatique des plantages ?\nEn cas de plantage, certaines donnÃ©es concernant votre appareil, votre configuration et les mods installÃ©s seront automatiquement envoyÃ©es Ã  Bugsnag. Vous trouverez plus dâ€™informations dans la Politique de confidentialitÃ©.\nCe rÃ©glage peut Ãªtre modifiÃ© Ã  tout moment depuis le menu.</string>
+    <string name="bugsnag_consent_restart_title">Veuillez redÃ©marrer lâ€™application</string>
+    <string name="bugsnag_consent_restart_message">Vous devez redÃ©marrer lâ€™application pour que ces rÃ©glages prennent effet.</string>
     <string name="action_bugsnag_consent">Rapports de plantage</string>
-    <string name="dialog_howto">Mode d’emploi</string>
-    <string name="no_browser_title">Impossible d’ouvrir une URL</string>
-    <string name="no_browser_message">Aucun navigateur web ne semble être installé. Tentative d’ouverture de l’URL suivante :\n\n%1$s</string>
+    <string name="dialog_howto">Mode dâ€™emploi</string>
+    <string name="no_browser_title">Impossible dâ€™ouvrir une URL</string>
+    <string name="no_browser_message">Aucun navigateur web ne semble Ãªtre installÃ©. Tentative dâ€™ouverture de lâ€™URL suivante :\n\n%1$s</string>
     <string name="pref_show_qp">Activer les touches rapides</string>
     <string name="pref_show_fn">Activer les touches FN</string>
-    <string name="pref_always_show_top_bar">Toujours afficher les icônes de la barre supérieure</string>
+    <string name="pref_always_show_top_bar">Toujours afficher les icÃ´nes de la barre supÃ©rieure</string>
     <string name="theme">0</string>
     <string name="shadows_activity_settings">Ombres</string>
     <string name="slider_auto">Auto</string>
-    <string name="controller_trigger_custom_values">Personnalisé (%1$d appui, %2$d relâchement)</string>
-    <string name="controller_trigger_custom">Personnalisé</string>
+    <string name="controller_trigger_custom_values">PersonnalisÃ© (%1$d appui, %2$d relÃ¢chement)</string>
+    <string name="controller_trigger_custom">PersonnalisÃ©</string>
     <string name="resolution_width_hint">Largeur</string>
     <string name="resolution_height_hint">Hauteur</string>
     <string name="resolution_native">Native</string>
     <string name="resolution_invalid">Veuillez saisir une largeur et une hauteur valides.</string>
-    <string name="launch_preparing">Chargement…</string>
-    <string name="launch_preparing_game">Préparation d’OpenMW…</string>
-    <string name="launch_failed_title">Échec du lancement d’OpenMW</string>
-    <string name="launch_failed_unknown">Erreur inconnue lors de la préparation d’OpenMW.</string>
+    <string name="launch_preparing">Chargementâ€¦</string>
+    <string name="launch_preparing_game">PrÃ©paration dâ€™OpenMWâ€¦</string>
+    <string name="launch_failed_title">Ã‰chec du lancement dâ€™OpenMW</string>
+    <string name="launch_failed_unknown">Erreur inconnue lors de la prÃ©paration dâ€™OpenMW.</string>
     <string name="user_configuration">Configuration utilisateur</string>
-    <string name="action_theme_submenu">Thème ›</string>
-    <string name="theme_set_to">Thème défini sur %1$s</string>
-    <string name="about_port_info">Ce port est réalisé par Andreas « \'Andiweli\' » Stürmer\nBasé sur un port de CaveBros\nOpenMW par l’équipe OpenMW depuis 2008</string>
+    <string name="action_theme_submenu">ThÃ¨me â€º</string>
+    <string name="theme_set_to">ThÃ¨me dÃ©fini sur %1$s</string>
+    <string name="about_port_info">Ce port est rÃ©alisÃ© par Andreas Â« \'Andiweli\' Â» StÃ¼rmer\nBasÃ© sur un port de CaveBros\nOpenMW par lâ€™Ã©quipe OpenMW depuis 2008</string>
     <string name="third_party_notices">Mentions relatives aux composants tiers</string>
-    <string name="chooser_select">Sélectionner</string>
-    <string name="chooser_create">Créer</string>
+    <string name="chooser_select">SÃ©lectionner</string>
+    <string name="chooser_create">CrÃ©er</string>
     <string name="chooser_new_folder">Nouveau dossier</string>
     <string name="chooser_cancel">Annuler</string>
     <string name="chooser_heading">Choisir le stockage</string>
     <string name="chooser_internal_storage">Stockage interne</string>
     <string name="chooser_free_space">%1$s libres</string>
-    <string name="chooser_folder_created">Dossier créé</string>
-    <string name="chooser_folder_error">Une erreur est survenue lors de la création du dossier. Veuillez réessayer.</string>
+    <string name="chooser_folder_created">Dossier crÃ©Ã©</string>
+    <string name="chooser_folder_error">Une erreur est survenue lors de la crÃ©ation du dossier. Veuillez rÃ©essayer.</string>
     <string name="chooser_folder_name">Nom du dossier</string>
-    <string name="chooser_empty_folder_name">Le nom du dossier ne peut pas être vide</string>
+    <string name="chooser_empty_folder_name">Le nom du dossier ne peut pas Ãªtre vide</string>
     <string-array name="pref_encoding_entries">
         <item>Europe centrale et orientale (win1250)</item>
         <item>Cyrillique (win1251)</item>
         <item>Latin (win1252)</item>
     </string-array>
     <string-array name="gs_factor_strength_into_hand_to_hand_combat_entries">
-        <item>Désactivé</item>
+        <item>DÃ©sactivÃ©</item>
         <item>Affecter les loups-garous</item>
         <item>Ne pas affecter les loups-garous</item>
     </string-array>
     <string-array name="gs_show_owned_entries">
-        <item>Désactivé</item>
+        <item>DÃ©sactivÃ©</item>
         <item>Infobulle uniquement</item>
-        <item>Réticule uniquement</item>
-        <item>Infobulle et réticule</item>
+        <item>RÃ©ticule uniquement</item>
+        <item>Infobulle et rÃ©ticule</item>
     </string-array>
     <string-array name="pref_omw051_controller_trigger_sensitivity_entries">
-        <item>Valeur OpenMW par défaut (15/16 appui, 13/16 relâchement)</item>
-        <item>Équilibré (12/16 appui, 10/16 relâchement)</item>
-        <item>Sensible (8/16 appui, 6/16 relâchement)</item>
+        <item>Valeur OpenMW par dÃ©faut (15/16 appui, 13/16 relÃ¢chement)</item>
+        <item>Ã‰quilibrÃ© (12/16 appui, 10/16 relÃ¢chement)</item>
+        <item>Sensible (8/16 appui, 6/16 relÃ¢chement)</item>
     </string-array>
     <string-array name="pref_textureShrinking_entries">
         <item>Aucune</item>
         <item>Faible</item>
         <item>Moyenne</item>
-        <item>Élevée</item>
+        <item>Ã‰levÃ©e</item>
     </string-array>
     <string-array name="pref_shadersDir_entries">
         <item>Original</item>
-        <item>Modifié</item>
+        <item>ModifiÃ©</item>
         <item>Zesterer</item>
         <item>OMWFX</item>
     </string-array>
     <string-array name="pref_mouse_mode_entries">
         <item>Hybride</item>
-        <item>Contrôles joystick relatifs</item>
-        <item>Contrôles tactiles absolus</item>
+        <item>ContrÃ´les joystick relatifs</item>
+        <item>ContrÃ´les tactiles absolus</item>
     </string-array>
     <string-array name="gs_shadow_quality_entries">
         <item>Faible</item>
         <item>Moyenne</item>
-        <item>Élevée</item>
-        <item>Très élevée</item>
+        <item>Ã‰levÃ©e</item>
+        <item>TrÃ¨s Ã©levÃ©e</item>
     </string-array>
     <string-array name="gs_shadow_distance_entries">
         <item>Faible</item>
         <item>Moyenne</item>
-        <item>Élevée</item>
+        <item>Ã‰levÃ©e</item>
     </string-array>
     <string name="osk_shift">Maj</string>
     <string name="osk_caps_lock">Verr. Maj</string>
     <string name="osk_language">Langue</string>
     <string name="sdl_error_title">Erreur SDL</string>
     <string name="sdl_exit">Quitter</string>
-    <string name="sdl_start_error">Une erreur est survenue lors du démarrage de l’application. Veuillez réessayer et/ou réinstaller l’application.\n\nErreur : %1$s</string>
-    <string name="navmesh_generating_cache">GÉNÉRATION DU CACHE NAVMESH</string>
+    <string name="sdl_start_error">Une erreur est survenue lors du dÃ©marrage de lâ€™application. Veuillez rÃ©essayer et/ou rÃ©installer lâ€™application.\n\nErreur : %1$s</string>
+    <string name="navmesh_generating_cache">GÃ‰NÃ‰RATION DU CACHE NAVMESH</string>
 
     <!-- Game folder validation -->
-    <string name="game_files_checking">Vérification des fichiers du jeu…</string>
-    <string name="game_files_selection_unchanged">La sélection précédente n’a pas été modifiée.</string>
+    <string name="game_files_checking">VÃ©rification des fichiers du jeuâ€¦</string>
+    <string name="game_files_selection_unchanged">La sÃ©lection prÃ©cÃ©dente nâ€™a pas Ã©tÃ© modifiÃ©e.</string>
     <string name="game_files_storage_unavailable_title">Emplacement de stockage indisponible</string>
-    <string name="game_files_storage_unavailable_message">Le stockage contenant le dossier du jeu n’est pas disponible pour le moment :\n%1$s\n\nInsérez la carte SD ou attendez qu’Android l’ait montée. La sélection enregistrée est conservée.</string>
+    <string name="game_files_storage_unavailable_message">Le stockage contenant le dossier du jeu nâ€™est pas disponible pour le moment :\n%1$s\n\nInsÃ©rez la carte SD ou attendez quâ€™Android lâ€™ait montÃ©e. La sÃ©lection enregistrÃ©e est conservÃ©e.</string>
     <string name="game_files_folder_not_found_title">Dossier introuvable</string>
-    <string name="game_files_folder_not_found_message">Le dossier du jeu est introuvable :\n%1$s\n\nA-t-il été déplacé ou renommé ? S’il se trouve sur une carte SD, vérifiez que la carte est insérée.</string>
-    <string name="game_files_access_denied_title">Accès en lecture refusé</string>
-    <string name="game_files_access_denied_message">OpenMW n’est pas autorisé à lire ce fichier ou ce dossier :\n%1$s\n\nVérifiez que l’autorisation d’accès au stockage est accordée dans les paramètres de l’application. Si c’est le cas, cet appareil n’autorise pas l’accès direct à cet emplacement ; copiez alors les fichiers du jeu dans le stockage interne.</string>
-    <string name="game_files_missing_message">Il manque dans le dossier sélectionné :\n%1$s\n\nVeuillez sélectionner le dossier contenant le fichier « Morrowind.ini » et le répertoire « Data Files ».</string>
+    <string name="game_files_folder_not_found_message">Le dossier du jeu est introuvable :\n%1$s\n\nA-t-il Ã©tÃ© dÃ©placÃ© ou renommÃ© ? Sâ€™il se trouve sur une carte SD, vÃ©rifiez que la carte est insÃ©rÃ©e.</string>
+    <string name="game_files_access_denied_title">AccÃ¨s en lecture refusÃ©</string>
+    <string name="game_files_access_denied_message">OpenMW nâ€™est pas autorisÃ© Ã  lire ce fichier ou ce dossier :\n%1$s\n\nVÃ©rifiez que lâ€™autorisation dâ€™accÃ¨s au stockage est accordÃ©e dans les paramÃ¨tres de lâ€™application. Si câ€™est le cas, cet appareil nâ€™autorise pas lâ€™accÃ¨s direct Ã  cet emplacement ; copiez alors les fichiers du jeu dans le stockage interne.</string>
+    <string name="game_files_missing_message">Il manque dans le dossier sÃ©lectionnÃ© :\n%1$s\n\nVeuillez sÃ©lectionner le dossier contenant le fichier Â« Morrowind.ini Â» et le rÃ©pertoire Â« Data Files Â».</string>
     <string name="game_files_read_failed_title">Erreur de lecture</string>
     <string name="game_files_read_failed_message">Impossible de lire le fichier :\n%1$s\n(%2$s)</string>
 
     <!-- Migration de l'ancien emplacement -->
-    <string name="legacy_storage_migration_progress">Déplacement des sauvegardes et des paramètres vers le nouvel emplacement…</string>
-    <string name="legacy_storage_migration_done_title">Sauvegardes déplacées</string>
-    <string name="legacy_storage_migration_conflicts_message">Certains fichiers existaient à la fois dans l\'ancien et dans le nouvel emplacement. Les fichiers du nouvel emplacement ont été conservés ; les anciennes versions différentes ont été enregistrées ici :\n%1$s</string>
-    <string name="legacy_storage_migration_failed_title">Sauvegardes non déplacées</string>
-    <string name="legacy_storage_migration_no_space_message">Vos sauvegardes et paramètres dans\n%1$s\nn\'ont pas pu être déplacés, car %2$s d\'espace libre sont nécessaires. L\'ancien dossier n\'a pas été modifié. Libérez de l\'espace et redémarrez OpenMW pour réessayer.</string>
-    <string name="legacy_storage_migration_failed_message">Vos sauvegardes et paramètres dans\n%1$s\nn\'ont pas pu être déplacés (%2$s). L\'ancien dossier n\'a pas été modifié. Redémarrez OpenMW pour réessayer.</string>
-</resources>
+    <string name="legacy_storage_migration_progress">DÃ©placement des sauvegardes et des paramÃ¨tres vers le nouvel emplacementâ€¦</string>
+    <string name="legacy_storage_migration_done_title">Sauvegardes dÃ©placÃ©es</string>
+    <string name="legacy_storage_migration_conflicts_message">Certains fichiers existaient Ã  la fois dans l\'ancien et dans le nouvel emplacement. Les fichiers du nouvel emplacement ont Ã©tÃ© conservÃ©s ; les anciennes versions diffÃ©rentes ont Ã©tÃ© enregistrÃ©es ici :\n%1$s</string>
+    <string name="legacy_storage_migration_failed_title">Sauvegardes non dÃ©placÃ©es</string>
+    <string name="legacy_storage_migration_no_space_message">Vos sauvegardes et paramÃ¨tres dans\n%1$s\nn\'ont pas pu Ãªtre dÃ©placÃ©s, car %2$s d\'espace libre sont nÃ©cessaires. L\'ancien dossier n\'a pas Ã©tÃ© modifiÃ©. LibÃ©rez de l\'espace et redÃ©marrez OpenMW pour rÃ©essayer.</string>
+    <string name="legacy_storage_migration_failed_message">Vos sauvegardes et paramÃ¨tres dans\n%1$s\nn\'ont pas pu Ãªtre dÃ©placÃ©s (%2$s). L\'ancien dossier n\'a pas Ã©tÃ© modifiÃ©. RedÃ©marrez OpenMW pour rÃ©essayer.</string>
+    <string name="pref_render_scale">Render Resolution</string>
+    <string name="pref_render_scale_summary">Internal 3D render resolution. Lower values improve performance; SGSR upscales to full screen.</string>
+    <string name="pref_sgsr_sharpness">SGSR Sharpness</string>
+    <string name="pref_sgsr_sharpness_summary">Edge sharpness for Snapdragon Game Super Resolution upscaling.</string></resources>

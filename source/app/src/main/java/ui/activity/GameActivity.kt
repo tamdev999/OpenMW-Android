@@ -135,7 +135,14 @@ class GameActivity : SDLActivity() {
         Os.setenv("OSG_VERTEX_BUFFER_HINT", "VBO", true)
         Os.setenv("OPENMW_USER_FILE_STORAGE", Constants.USER_FILE_STORAGE + "/", true)
         //Os.setenv("OSG_NOTIFY_LEVEL", "FATAL", true) //hide osg errors for now, gl4es bug.
-        
+
+        // RENDER_SCALE_SGSR1: set engine render-scale and SGSR sharpness from launcher prefs.
+        // Set before the user's custom envLine so that line can override (e.g. OPENMW_SCENE_UPSCALER=bilinear).
+        val renderScale = PreferenceManager.getDefaultSharedPreferences(this).getString("gs_render_scale", "1.0") ?: "1.0"
+        Os.setenv("OPENMW_RENDER_SCALE", renderScale, true)
+        val sgsrSharpness = PreferenceManager.getDefaultSharedPreferences(this).getString("gs_sgsr_sharpness", "2.0") ?: "2.0"
+        Os.setenv("OPENMW_SGSR_SHARPNESS", sgsrSharpness, true)
+
         val envline: String = PreferenceManager.getDefaultSharedPreferences(this).getString("envLine", "").toString()
         if (envline.length > 0) {
             val envs: List<String> = envline.split(" ", "\n")

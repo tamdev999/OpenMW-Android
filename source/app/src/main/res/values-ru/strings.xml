@@ -1,211 +1,214 @@
-<?xml version='1.0' encoding='utf-8'?>
+﻿<?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">OpenMW</string>
-    <string name="general_settings">Настройка</string>
-    <string name="start_game_label">Запустить игру</string>
-    <string name="closeDrawer">Навигация</string>
-    <string name="openDrawer">Навигация закрыта</string>
-    <string name="game_files">Файлы игры</string>
-    <string name="pref_graphicsLibrary">Библиотека графического API</string>
+    <string name="general_settings">ÐÐ°ÑÑ‚Ñ€Ð¾Ð¹ÐºÐ°</string>
+    <string name="start_game_label">Ð—Ð°Ð¿ÑƒÑÑ‚Ð¸Ñ‚ÑŒ Ð¸Ð³Ñ€Ñƒ</string>
+    <string name="closeDrawer">ÐÐ°Ð²Ð¸Ð³Ð°Ñ†Ð¸Ñ</string>
+    <string name="openDrawer">ÐÐ°Ð²Ð¸Ð³Ð°Ñ†Ð¸Ñ Ð·Ð°ÐºÑ€Ñ‹Ñ‚Ð°</string>
+    <string name="game_files">Ð¤Ð°Ð¹Ð»Ñ‹ Ð¸Ð³Ñ€Ñ‹</string>
+    <string name="pref_graphicsLibrary">Ð‘Ð¸Ð±Ð»Ð¸Ð¾Ñ‚ÐµÐºÐ° Ð³Ñ€Ð°Ñ„Ð¸Ñ‡ÐµÑÐºÐ¾Ð³Ð¾ API</string>
     <string name="pref_graphicsLibrary_default">gles2</string>
-    <string name="pref_advanced">Дополнительно</string>
-    <string name="pref_graphics">Графика</string>
-    <string name="pref_commandLine">Пользовательские аргументы командной строки</string>
-    <string name="pref_envLine">Пользовательские переменные окружения</string>
-    <string name="pref_nohighp">Средняя точность шейдеров</string>
-    <string name="pref_nohighp_summary">Использует среднюю точность вместо высокой; доступно только с набором шейдеров «Modified».</string>
-    <string name="pref_ui">Интерфейс</string>
-    <string name="pref_textureShrinking">Уменьшение текстур</string>
+    <string name="pref_advanced">Ð”Ð¾Ð¿Ð¾Ð»Ð½Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ð¾</string>
+    <string name="pref_graphics">Ð“Ñ€Ð°Ñ„Ð¸ÐºÐ°</string>
+    <string name="pref_commandLine">ÐŸÐ¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»ÑŒÑÐºÐ¸Ðµ Ð°Ñ€Ð³ÑƒÐ¼ÐµÐ½Ñ‚Ñ‹ ÐºÐ¾Ð¼Ð°Ð½Ð´Ð½Ð¾Ð¹ ÑÑ‚Ñ€Ð¾ÐºÐ¸</string>
+    <string name="pref_envLine">ÐŸÐ¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»ÑŒÑÐºÐ¸Ðµ Ð¿ÐµÑ€ÐµÐ¼ÐµÐ½Ð½Ñ‹Ðµ Ð¾ÐºÑ€ÑƒÐ¶ÐµÐ½Ð¸Ñ</string>
+    <string name="pref_nohighp">Ð¡Ñ€ÐµÐ´Ð½ÑÑ Ñ‚Ð¾Ñ‡Ð½Ð¾ÑÑ‚ÑŒ ÑˆÐµÐ¹Ð´ÐµÑ€Ð¾Ð²</string>
+    <string name="pref_nohighp_summary">Ð˜ÑÐ¿Ð¾Ð»ÑŒÐ·ÑƒÐµÑ‚ ÑÑ€ÐµÐ´Ð½ÑŽÑŽ Ñ‚Ð¾Ñ‡Ð½Ð¾ÑÑ‚ÑŒ Ð²Ð¼ÐµÑÑ‚Ð¾ Ð²Ñ‹ÑÐ¾ÐºÐ¾Ð¹; Ð´Ð¾ÑÑ‚ÑƒÐ¿Ð½Ð¾ Ñ‚Ð¾Ð»ÑŒÐºÐ¾ Ñ Ð½Ð°Ð±Ð¾Ñ€Ð¾Ð¼ ÑˆÐµÐ¹Ð´ÐµÑ€Ð¾Ð² Â«ModifiedÂ».</string>
+    <string name="pref_ui">Ð˜Ð½Ñ‚ÐµÑ€Ñ„ÐµÐ¹Ñ</string>
+    <string name="pref_textureShrinking">Ð£Ð¼ÐµÐ½ÑŒÑˆÐµÐ½Ð¸Ðµ Ñ‚ÐµÐºÑÑ‚ÑƒÑ€</string>
     <string name="pref_textureShrinking_default">none</string>
-    <string name="pref_shadersDir">Наборы шейдеров</string>
+    <string name="pref_shadersDir">ÐÐ°Ð±Ð¾Ñ€Ñ‹ ÑˆÐµÐ¹Ð´ÐµÑ€Ð¾Ð²</string>
     <string name="pref_shadersDir_default">none</string>
-    <string name="pref_gamma">Гамма</string>
-    <string name="pref_uiScaling">Масштаб интерфейса</string>
-    <string name="pref_font_size">Размер шрифта</string>
-    <string name="pref_truetype_fonts_title">Чёткие шрифты</string>
-    <string name="pref_truetype_fonts_summary">Использовать шрифты TrueType из OpenMW вместо оригинальных растровых. Они остаются чёткими при любом размере шрифта и масштабе интерфейса и нужны для размеров больше 18.</string>
-    <string name="uiScaling_auto">Авто (%1$.2f)</string>
-    <string name="pref_screen_keeper">Не выключать экран</string>
-    <string name="pref_touchpadSensitivity">Чувствительность виртуальной сенсорной панели</string>
-    <string name="action_reset_config">Сбросить статические файлы конфигурации</string>
-    <string name="action_reset_user_config">Сбросить файлы конфигурации пользователя</string>
-    <string name="action_reset_user_resources">Сбросить пользовательские ресурсы</string>
-    <string name="action_reset_screen_controls">Сбросить экранное управление</string>
-    <string name="action_show_screen_controls">Экранное управление</string>
-    <string name="pref_hide_controls">Скрыть экранные кнопки</string>
-    <string name="pref_handheld_mode_title">Портативный режим</string>
-    <string name="pref_handheld_mode_summary">Для устройств со встроенным управлением. Скрывает экранные кнопки. Удерживайте L1 для радиального меню. R1 открывает дневник. Select — отдых, а в текстовом поле открывает клавиатуру Android. L3 показывает курсор в меню. Удерживайте Select и нажмите L3 или R3 для оверлея производительности.</string>
-    <string name="config_was_reset">Статическая конфигурация сброшена к значениям по умолчанию</string>
-    <string name="user_config_was_reset">Конфигурация пользователя сброшена к значениям по умолчанию</string>
-    <string name="user_resources_was_reset">Пользовательские ресурсы сброшены к значениям по умолчанию</string>
-    <string name="pref_lang">Настройки языка</string>
-    <string name="pref_encoding">Язык игры</string>
+    <string name="pref_gamma">Ð“Ð°Ð¼Ð¼Ð°</string>
+    <string name="pref_uiScaling">ÐœÐ°ÑÑˆÑ‚Ð°Ð± Ð¸Ð½Ñ‚ÐµÑ€Ñ„ÐµÐ¹ÑÐ°</string>
+    <string name="pref_font_size">Ð Ð°Ð·Ð¼ÐµÑ€ ÑˆÑ€Ð¸Ñ„Ñ‚Ð°</string>
+    <string name="pref_truetype_fonts_title">Ð§Ñ‘Ñ‚ÐºÐ¸Ðµ ÑˆÑ€Ð¸Ñ„Ñ‚Ñ‹</string>
+    <string name="pref_truetype_fonts_summary">Ð˜ÑÐ¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÑŒ ÑˆÑ€Ð¸Ñ„Ñ‚Ñ‹ TrueType Ð¸Ð· OpenMW Ð²Ð¼ÐµÑÑ‚Ð¾ Ð¾Ñ€Ð¸Ð³Ð¸Ð½Ð°Ð»ÑŒÐ½Ñ‹Ñ… Ñ€Ð°ÑÑ‚Ñ€Ð¾Ð²Ñ‹Ñ…. ÐžÐ½Ð¸ Ð¾ÑÑ‚Ð°ÑŽÑ‚ÑÑ Ñ‡Ñ‘Ñ‚ÐºÐ¸Ð¼Ð¸ Ð¿Ñ€Ð¸ Ð»ÑŽÐ±Ð¾Ð¼ Ñ€Ð°Ð·Ð¼ÐµÑ€Ðµ ÑˆÑ€Ð¸Ñ„Ñ‚Ð° Ð¸ Ð¼Ð°ÑÑˆÑ‚Ð°Ð±Ðµ Ð¸Ð½Ñ‚ÐµÑ€Ñ„ÐµÐ¹ÑÐ° Ð¸ Ð½ÑƒÐ¶Ð½Ñ‹ Ð´Ð»Ñ Ñ€Ð°Ð·Ð¼ÐµÑ€Ð¾Ð² Ð±Ð¾Ð»ÑŒÑˆÐµ 18.</string>
+    <string name="uiScaling_auto">ÐÐ²Ñ‚Ð¾ (%1$.2f)</string>
+    <string name="pref_screen_keeper">ÐÐµ Ð²Ñ‹ÐºÐ»ÑŽÑ‡Ð°Ñ‚ÑŒ ÑÐºÑ€Ð°Ð½</string>
+    <string name="pref_touchpadSensitivity">Ð§ÑƒÐ²ÑÑ‚Ð²Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ð¾ÑÑ‚ÑŒ Ð²Ð¸Ñ€Ñ‚ÑƒÐ°Ð»ÑŒÐ½Ð¾Ð¹ ÑÐµÐ½ÑÐ¾Ñ€Ð½Ð¾Ð¹ Ð¿Ð°Ð½ÐµÐ»Ð¸</string>
+    <string name="action_reset_config">Ð¡Ð±Ñ€Ð¾ÑÐ¸Ñ‚ÑŒ ÑÑ‚Ð°Ñ‚Ð¸Ñ‡ÐµÑÐºÐ¸Ðµ Ñ„Ð°Ð¹Ð»Ñ‹ ÐºÐ¾Ð½Ñ„Ð¸Ð³ÑƒÑ€Ð°Ñ†Ð¸Ð¸</string>
+    <string name="action_reset_user_config">Ð¡Ð±Ñ€Ð¾ÑÐ¸Ñ‚ÑŒ Ñ„Ð°Ð¹Ð»Ñ‹ ÐºÐ¾Ð½Ñ„Ð¸Ð³ÑƒÑ€Ð°Ñ†Ð¸Ð¸ Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»Ñ</string>
+    <string name="action_reset_user_resources">Ð¡Ð±Ñ€Ð¾ÑÐ¸Ñ‚ÑŒ Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»ÑŒÑÐºÐ¸Ðµ Ñ€ÐµÑÑƒÑ€ÑÑ‹</string>
+    <string name="action_reset_screen_controls">Ð¡Ð±Ñ€Ð¾ÑÐ¸Ñ‚ÑŒ ÑÐºÑ€Ð°Ð½Ð½Ð¾Ðµ ÑƒÐ¿Ñ€Ð°Ð²Ð»ÐµÐ½Ð¸Ðµ</string>
+    <string name="action_show_screen_controls">Ð­ÐºÑ€Ð°Ð½Ð½Ð¾Ðµ ÑƒÐ¿Ñ€Ð°Ð²Ð»ÐµÐ½Ð¸Ðµ</string>
+    <string name="pref_hide_controls">Ð¡ÐºÑ€Ñ‹Ñ‚ÑŒ ÑÐºÑ€Ð°Ð½Ð½Ñ‹Ðµ ÐºÐ½Ð¾Ð¿ÐºÐ¸</string>
+    <string name="pref_handheld_mode_title">ÐŸÐ¾Ñ€Ñ‚Ð°Ñ‚Ð¸Ð²Ð½Ñ‹Ð¹ Ñ€ÐµÐ¶Ð¸Ð¼</string>
+    <string name="pref_handheld_mode_summary">Ð”Ð»Ñ ÑƒÑÑ‚Ñ€Ð¾Ð¹ÑÑ‚Ð² ÑÐ¾ Ð²ÑÑ‚Ñ€Ð¾ÐµÐ½Ð½Ñ‹Ð¼ ÑƒÐ¿Ñ€Ð°Ð²Ð»ÐµÐ½Ð¸ÐµÐ¼. Ð¡ÐºÑ€Ñ‹Ð²Ð°ÐµÑ‚ ÑÐºÑ€Ð°Ð½Ð½Ñ‹Ðµ ÐºÐ½Ð¾Ð¿ÐºÐ¸. Ð£Ð´ÐµÑ€Ð¶Ð¸Ð²Ð°Ð¹Ñ‚Ðµ L1 Ð´Ð»Ñ Ñ€Ð°Ð´Ð¸Ð°Ð»ÑŒÐ½Ð¾Ð³Ð¾ Ð¼ÐµÐ½ÑŽ. R1 Ð¾Ñ‚ÐºÑ€Ñ‹Ð²Ð°ÐµÑ‚ Ð´Ð½ÐµÐ²Ð½Ð¸Ðº. Select â€” Ð¾Ñ‚Ð´Ñ‹Ñ…, Ð° Ð² Ñ‚ÐµÐºÑÑ‚Ð¾Ð²Ð¾Ð¼ Ð¿Ð¾Ð»Ðµ Ð¾Ñ‚ÐºÑ€Ñ‹Ð²Ð°ÐµÑ‚ ÐºÐ»Ð°Ð²Ð¸Ð°Ñ‚ÑƒÑ€Ñƒ Android. L3 Ð¿Ð¾ÐºÐ°Ð·Ñ‹Ð²Ð°ÐµÑ‚ ÐºÑƒÑ€ÑÐ¾Ñ€ Ð² Ð¼ÐµÐ½ÑŽ. Ð£Ð´ÐµÑ€Ð¶Ð¸Ð²Ð°Ð¹Ñ‚Ðµ Select Ð¸ Ð½Ð°Ð¶Ð¼Ð¸Ñ‚Ðµ L3 Ð¸Ð»Ð¸ R3 Ð´Ð»Ñ Ð¾Ð²ÐµÑ€Ð»ÐµÑ Ð¿Ñ€Ð¾Ð¸Ð·Ð²Ð¾Ð´Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ð¾ÑÑ‚Ð¸.</string>
+    <string name="config_was_reset">Ð¡Ñ‚Ð°Ñ‚Ð¸Ñ‡ÐµÑÐºÐ°Ñ ÐºÐ¾Ð½Ñ„Ð¸Ð³ÑƒÑ€Ð°Ñ†Ð¸Ñ ÑÐ±Ñ€Ð¾ÑˆÐµÐ½Ð° Ðº Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸ÑÐ¼ Ð¿Ð¾ ÑƒÐ¼Ð¾Ð»Ñ‡Ð°Ð½Ð¸ÑŽ</string>
+    <string name="user_config_was_reset">ÐšÐ¾Ð½Ñ„Ð¸Ð³ÑƒÑ€Ð°Ñ†Ð¸Ñ Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»Ñ ÑÐ±Ñ€Ð¾ÑˆÐµÐ½Ð° Ðº Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸ÑÐ¼ Ð¿Ð¾ ÑƒÐ¼Ð¾Ð»Ñ‡Ð°Ð½Ð¸ÑŽ</string>
+    <string name="user_resources_was_reset">ÐŸÐ¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»ÑŒÑÐºÐ¸Ðµ Ñ€ÐµÑÑƒÑ€ÑÑ‹ ÑÐ±Ñ€Ð¾ÑˆÐµÐ½Ñ‹ Ðº Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸ÑÐ¼ Ð¿Ð¾ ÑƒÐ¼Ð¾Ð»Ñ‡Ð°Ð½Ð¸ÑŽ</string>
+    <string name="pref_lang">ÐÐ°ÑÑ‚Ñ€Ð¾Ð¹ÐºÐ¸ ÑÐ·Ñ‹ÐºÐ°</string>
+    <string name="pref_encoding">Ð¯Ð·Ñ‹Ðº Ð¸Ð³Ñ€Ñ‹</string>
     <string name="pref_encoding_default">win1252</string>
-    <string name="btn_opacityPlus">Прозрачность+</string>
-    <string name="btn_opacityMinus">Прозрачность-</string>
-    <string name="btn_sizePlus">Размер+</string>
-    <string name="btn_sizeMinus">Размер-</string>
-    <string name="btn_resetControlsLayout">Сбросить по умолчанию</string>
-    <string name="pref_physicsFPS2">FPS физики</string>
-    <string name="pref_framerate_limit">Ограничение частоты кадров</string>
+    <string name="btn_opacityPlus">ÐŸÑ€Ð¾Ð·Ñ€Ð°Ñ‡Ð½Ð¾ÑÑ‚ÑŒ+</string>
+    <string name="btn_opacityMinus">ÐŸÑ€Ð¾Ð·Ñ€Ð°Ñ‡Ð½Ð¾ÑÑ‚ÑŒ-</string>
+    <string name="btn_sizePlus">Ð Ð°Ð·Ð¼ÐµÑ€+</string>
+    <string name="btn_sizeMinus">Ð Ð°Ð·Ð¼ÐµÑ€-</string>
+    <string name="btn_resetControlsLayout">Ð¡Ð±Ñ€Ð¾ÑÐ¸Ñ‚ÑŒ Ð¿Ð¾ ÑƒÐ¼Ð¾Ð»Ñ‡Ð°Ð½Ð¸ÑŽ</string>
+    <string name="pref_physicsFPS2">FPS Ñ„Ð¸Ð·Ð¸ÐºÐ¸</string>
+    <string name="pref_framerate_limit">ÐžÐ³Ñ€Ð°Ð½Ð¸Ñ‡ÐµÐ½Ð¸Ðµ Ñ‡Ð°ÑÑ‚Ð¾Ñ‚Ñ‹ ÐºÐ°Ð´Ñ€Ð¾Ð²</string>
     <string name="pref_framerate_limit_default">60</string>
     <string name="pref_physicsFPS2_default">30</string>
-    <string name="btn_back">Назад</string>
-    <string name="pref_customResolution">Пользовательское разрешение</string>
-    <string name="pref_display_cutout_area">Отображать в области выреза</string>
-    <string name="mods">Модификации игры</string>
-    <string name="action_about">О программе</string>
-    <string name="about_title">Об OpenMW</string>
-    <string name="action_theme">Тема</string>
-    <string name="action_theme_system">Системная</string>
-    <string name="action_theme_light">Светлая</string>
-    <string name="action_theme_dark">Тёмная</string>
-    <string name="action_theme_oled">Чёрная/OLED</string>
-    <string name="activity_settings">Настройки игры</string>
-    <string name="game_mechanics_activity_settings">Игровой процесс</string>
-    <string name="visuals_activity_settings">Графика</string>
-    <string name="animations_activity_settings">Анимации</string>
-    <string name="interface_activity_settings">Интерфейс</string>
-    <string name="bug_fixes_activity_settings">Исправления ошибок</string>
-    <string name="miscellaneous_activity_settings">Разное</string>
-    <string name="engine_activity_settings">Движок</string>
-    <string name="activity_mods">Моды</string>
-    <string name="tab_plugins">Плагины</string>
-    <string name="tab_resources">Ресурсы</string>
-    <string name="tab_dirs">Каталоги</string>
-    <string name="tab_groundcover">Наземная растительность</string>
-    <string name="data_error_title">Ошибка поиска файлов игры</string>
-    <string name="data_error_message">Выберите каталог, содержащий одновременно файл «Morrowind.ini» и каталог «Data Files».</string>
-    <string name="permissions_error_title">Нет разрешений</string>
-    <string name="permissions_error_message">OpenMW требуется доступ к хранилищу, чтобы найти и использовать файлы Morrowind. Разрешите доступ в настройках приложения.</string>
-    <string name="ini_error_message">Не удалось преобразовать файл конфигурации. Убедитесь, что файл «Morrowind.ini» имеет корректную структуру.</string>
-    <string name="no_data_files_title">Файлы игры не найдены</string>
-    <string name="no_data_files_message">Скопируйте файлы Morrowind на устройство и укажите путь к ним в разделе «Файлы игры», прежде чем запускать игру.</string>
-    <string name="category_performance">Производительность</string>
-    <string name="no_content_files_title">Нет файлов содержимого!</string>
-    <string name="no_content_files_message">Не включено ни одного файла содержимого. Перед запуском игры необходимо активировать хотя бы один файл плагина в меню «Моды…».</string>
-    <string name="no_content_files_dismiss">Всё равно продолжить</string>
-    <string name="configure_mods">Настроить моды</string>
-    <string name="pref_mouse_mode">Режим мыши в меню</string>
+    <string name="btn_back">ÐÐ°Ð·Ð°Ð´</string>
+    <string name="pref_customResolution">ÐŸÐ¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»ÑŒÑÐºÐ¾Ðµ Ñ€Ð°Ð·Ñ€ÐµÑˆÐµÐ½Ð¸Ðµ</string>
+    <string name="pref_display_cutout_area">ÐžÑ‚Ð¾Ð±Ñ€Ð°Ð¶Ð°Ñ‚ÑŒ Ð² Ð¾Ð±Ð»Ð°ÑÑ‚Ð¸ Ð²Ñ‹Ñ€ÐµÐ·Ð°</string>
+    <string name="mods">ÐœÐ¾Ð´Ð¸Ñ„Ð¸ÐºÐ°Ñ†Ð¸Ð¸ Ð¸Ð³Ñ€Ñ‹</string>
+    <string name="action_about">Ðž Ð¿Ñ€Ð¾Ð³Ñ€Ð°Ð¼Ð¼Ðµ</string>
+    <string name="about_title">ÐžÐ± OpenMW</string>
+    <string name="action_theme">Ð¢ÐµÐ¼Ð°</string>
+    <string name="action_theme_system">Ð¡Ð¸ÑÑ‚ÐµÐ¼Ð½Ð°Ñ</string>
+    <string name="action_theme_light">Ð¡Ð²ÐµÑ‚Ð»Ð°Ñ</string>
+    <string name="action_theme_dark">Ð¢Ñ‘Ð¼Ð½Ð°Ñ</string>
+    <string name="action_theme_oled">Ð§Ñ‘Ñ€Ð½Ð°Ñ/OLED</string>
+    <string name="activity_settings">ÐÐ°ÑÑ‚Ñ€Ð¾Ð¹ÐºÐ¸ Ð¸Ð³Ñ€Ñ‹</string>
+    <string name="game_mechanics_activity_settings">Ð˜Ð³Ñ€Ð¾Ð²Ð¾Ð¹ Ð¿Ñ€Ð¾Ñ†ÐµÑÑ</string>
+    <string name="visuals_activity_settings">Ð“Ñ€Ð°Ñ„Ð¸ÐºÐ°</string>
+    <string name="animations_activity_settings">ÐÐ½Ð¸Ð¼Ð°Ñ†Ð¸Ð¸</string>
+    <string name="interface_activity_settings">Ð˜Ð½Ñ‚ÐµÑ€Ñ„ÐµÐ¹Ñ</string>
+    <string name="bug_fixes_activity_settings">Ð˜ÑÐ¿Ñ€Ð°Ð²Ð»ÐµÐ½Ð¸Ñ Ð¾ÑˆÐ¸Ð±Ð¾Ðº</string>
+    <string name="miscellaneous_activity_settings">Ð Ð°Ð·Ð½Ð¾Ðµ</string>
+    <string name="engine_activity_settings">Ð”Ð²Ð¸Ð¶Ð¾Ðº</string>
+    <string name="activity_mods">ÐœÐ¾Ð´Ñ‹</string>
+    <string name="tab_plugins">ÐŸÐ»Ð°Ð³Ð¸Ð½Ñ‹</string>
+    <string name="tab_resources">Ð ÐµÑÑƒÑ€ÑÑ‹</string>
+    <string name="tab_dirs">ÐšÐ°Ñ‚Ð°Ð»Ð¾Ð³Ð¸</string>
+    <string name="tab_groundcover">ÐÐ°Ð·ÐµÐ¼Ð½Ð°Ñ Ñ€Ð°ÑÑ‚Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ð¾ÑÑ‚ÑŒ</string>
+    <string name="data_error_title">ÐžÑˆÐ¸Ð±ÐºÐ° Ð¿Ð¾Ð¸ÑÐºÐ° Ñ„Ð°Ð¹Ð»Ð¾Ð² Ð¸Ð³Ñ€Ñ‹</string>
+    <string name="data_error_message">Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ ÐºÐ°Ñ‚Ð°Ð»Ð¾Ð³, ÑÐ¾Ð´ÐµÑ€Ð¶Ð°Ñ‰Ð¸Ð¹ Ð¾Ð´Ð½Ð¾Ð²Ñ€ÐµÐ¼ÐµÐ½Ð½Ð¾ Ñ„Ð°Ð¹Ð» Â«Morrowind.iniÂ» Ð¸ ÐºÐ°Ñ‚Ð°Ð»Ð¾Ð³ Â«Data FilesÂ».</string>
+    <string name="permissions_error_title">ÐÐµÑ‚ Ñ€Ð°Ð·Ñ€ÐµÑˆÐµÐ½Ð¸Ð¹</string>
+    <string name="permissions_error_message">OpenMW Ñ‚Ñ€ÐµÐ±ÑƒÐµÑ‚ÑÑ Ð´Ð¾ÑÑ‚ÑƒÐ¿ Ðº Ñ…Ñ€Ð°Ð½Ð¸Ð»Ð¸Ñ‰Ñƒ, Ñ‡Ñ‚Ð¾Ð±Ñ‹ Ð½Ð°Ð¹Ñ‚Ð¸ Ð¸ Ð¸ÑÐ¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÑŒ Ñ„Ð°Ð¹Ð»Ñ‹ Morrowind. Ð Ð°Ð·Ñ€ÐµÑˆÐ¸Ñ‚Ðµ Ð´Ð¾ÑÑ‚ÑƒÐ¿ Ð² Ð½Ð°ÑÑ‚Ñ€Ð¾Ð¹ÐºÐ°Ñ… Ð¿Ñ€Ð¸Ð»Ð¾Ð¶ÐµÐ½Ð¸Ñ.</string>
+    <string name="ini_error_message">ÐÐµ ÑƒÐ´Ð°Ð»Ð¾ÑÑŒ Ð¿Ñ€ÐµÐ¾Ð±Ñ€Ð°Ð·Ð¾Ð²Ð°Ñ‚ÑŒ Ñ„Ð°Ð¹Ð» ÐºÐ¾Ð½Ñ„Ð¸Ð³ÑƒÑ€Ð°Ñ†Ð¸Ð¸. Ð£Ð±ÐµÐ´Ð¸Ñ‚ÐµÑÑŒ, Ñ‡Ñ‚Ð¾ Ñ„Ð°Ð¹Ð» Â«Morrowind.iniÂ» Ð¸Ð¼ÐµÐµÑ‚ ÐºÐ¾Ñ€Ñ€ÐµÐºÑ‚Ð½ÑƒÑŽ ÑÑ‚Ñ€ÑƒÐºÑ‚ÑƒÑ€Ñƒ.</string>
+    <string name="no_data_files_title">Ð¤Ð°Ð¹Ð»Ñ‹ Ð¸Ð³Ñ€Ñ‹ Ð½Ðµ Ð½Ð°Ð¹Ð´ÐµÐ½Ñ‹</string>
+    <string name="no_data_files_message">Ð¡ÐºÐ¾Ð¿Ð¸Ñ€ÑƒÐ¹Ñ‚Ðµ Ñ„Ð°Ð¹Ð»Ñ‹ Morrowind Ð½Ð° ÑƒÑÑ‚Ñ€Ð¾Ð¹ÑÑ‚Ð²Ð¾ Ð¸ ÑƒÐºÐ°Ð¶Ð¸Ñ‚Ðµ Ð¿ÑƒÑ‚ÑŒ Ðº Ð½Ð¸Ð¼ Ð² Ñ€Ð°Ð·Ð´ÐµÐ»Ðµ Â«Ð¤Ð°Ð¹Ð»Ñ‹ Ð¸Ð³Ñ€Ñ‹Â», Ð¿Ñ€ÐµÐ¶Ð´Ðµ Ñ‡ÐµÐ¼ Ð·Ð°Ð¿ÑƒÑÐºÐ°Ñ‚ÑŒ Ð¸Ð³Ñ€Ñƒ.</string>
+    <string name="category_performance">ÐŸÑ€Ð¾Ð¸Ð·Ð²Ð¾Ð´Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ð¾ÑÑ‚ÑŒ</string>
+    <string name="no_content_files_title">ÐÐµÑ‚ Ñ„Ð°Ð¹Ð»Ð¾Ð² ÑÐ¾Ð´ÐµÑ€Ð¶Ð¸Ð¼Ð¾Ð³Ð¾!</string>
+    <string name="no_content_files_message">ÐÐµ Ð²ÐºÐ»ÑŽÑ‡ÐµÐ½Ð¾ Ð½Ð¸ Ð¾Ð´Ð½Ð¾Ð³Ð¾ Ñ„Ð°Ð¹Ð»Ð° ÑÐ¾Ð´ÐµÑ€Ð¶Ð¸Ð¼Ð¾Ð³Ð¾. ÐŸÐµÑ€ÐµÐ´ Ð·Ð°Ð¿ÑƒÑÐºÐ¾Ð¼ Ð¸Ð³Ñ€Ñ‹ Ð½ÐµÐ¾Ð±Ñ…Ð¾Ð´Ð¸Ð¼Ð¾ Ð°ÐºÑ‚Ð¸Ð²Ð¸Ñ€Ð¾Ð²Ð°Ñ‚ÑŒ Ñ…Ð¾Ñ‚Ñ Ð±Ñ‹ Ð¾Ð´Ð¸Ð½ Ñ„Ð°Ð¹Ð» Ð¿Ð»Ð°Ð³Ð¸Ð½Ð° Ð² Ð¼ÐµÐ½ÑŽ Â«ÐœÐ¾Ð´Ñ‹â€¦Â».</string>
+    <string name="no_content_files_dismiss">Ð’ÑÑ‘ Ñ€Ð°Ð²Ð½Ð¾ Ð¿Ñ€Ð¾Ð´Ð¾Ð»Ð¶Ð¸Ñ‚ÑŒ</string>
+    <string name="configure_mods">ÐÐ°ÑÑ‚Ñ€Ð¾Ð¸Ñ‚ÑŒ Ð¼Ð¾Ð´Ñ‹</string>
+    <string name="pref_mouse_mode">Ð ÐµÐ¶Ð¸Ð¼ Ð¼Ñ‹ÑˆÐ¸ Ð² Ð¼ÐµÐ½ÑŽ</string>
     <string name="pref_mouse_mode_default">hybrid</string>
-    <string name="bugsnag_yes">Да</string>
-    <string name="bugsnag_no">Нет</string>
-    <string name="bugsnag_policy">Политика конфиденциальности</string>
-    <string name="bugsnag_consent_title">Автоматически отправлять отчёты о сбоях?</string>
-    <string name="bugsnag_consent_message">Включить автоматическую отправку отчётов о сбоях?\nЕсли произойдёт сбой, некоторые данные об устройстве, конфигурации и установленных модах будут автоматически отправлены в Bugsnag. Подробнее см. в Политике конфиденциальности.\nЭту настройку можно изменить в меню в любое время.</string>
-    <string name="bugsnag_consent_restart_title">Перезапустите приложение</string>
-    <string name="bugsnag_consent_restart_message">Чтобы настройки вступили в силу, необходимо перезапустить приложение.</string>
-    <string name="action_bugsnag_consent">Отчёты о сбоях</string>
-    <string name="dialog_howto">Инструкция</string>
-    <string name="no_browser_title">Не удалось открыть URL</string>
-    <string name="no_browser_message">Похоже, на устройстве не установлен веб-браузер. Была предпринята попытка открыть следующий URL:\n\n%1$s</string>
-    <string name="pref_show_qp">Включить быстрые клавиши</string>
-    <string name="pref_show_fn">Включить клавиши FN</string>
-    <string name="pref_always_show_top_bar">Всегда показывать значки верхней панели</string>
+    <string name="bugsnag_yes">Ð”Ð°</string>
+    <string name="bugsnag_no">ÐÐµÑ‚</string>
+    <string name="bugsnag_policy">ÐŸÐ¾Ð»Ð¸Ñ‚Ð¸ÐºÐ° ÐºÐ¾Ð½Ñ„Ð¸Ð´ÐµÐ½Ñ†Ð¸Ð°Ð»ÑŒÐ½Ð¾ÑÑ‚Ð¸</string>
+    <string name="bugsnag_consent_title">ÐÐ²Ñ‚Ð¾Ð¼Ð°Ñ‚Ð¸Ñ‡ÐµÑÐºÐ¸ Ð¾Ñ‚Ð¿Ñ€Ð°Ð²Ð»ÑÑ‚ÑŒ Ð¾Ñ‚Ñ‡Ñ‘Ñ‚Ñ‹ Ð¾ ÑÐ±Ð¾ÑÑ…?</string>
+    <string name="bugsnag_consent_message">Ð’ÐºÐ»ÑŽÑ‡Ð¸Ñ‚ÑŒ Ð°Ð²Ñ‚Ð¾Ð¼Ð°Ñ‚Ð¸Ñ‡ÐµÑÐºÑƒÑŽ Ð¾Ñ‚Ð¿Ñ€Ð°Ð²ÐºÑƒ Ð¾Ñ‚Ñ‡Ñ‘Ñ‚Ð¾Ð² Ð¾ ÑÐ±Ð¾ÑÑ…?\nÐ•ÑÐ»Ð¸ Ð¿Ñ€Ð¾Ð¸Ð·Ð¾Ð¹Ð´Ñ‘Ñ‚ ÑÐ±Ð¾Ð¹, Ð½ÐµÐºÐ¾Ñ‚Ð¾Ñ€Ñ‹Ðµ Ð´Ð°Ð½Ð½Ñ‹Ðµ Ð¾Ð± ÑƒÑÑ‚Ñ€Ð¾Ð¹ÑÑ‚Ð²Ðµ, ÐºÐ¾Ð½Ñ„Ð¸Ð³ÑƒÑ€Ð°Ñ†Ð¸Ð¸ Ð¸ ÑƒÑÑ‚Ð°Ð½Ð¾Ð²Ð»ÐµÐ½Ð½Ñ‹Ñ… Ð¼Ð¾Ð´Ð°Ñ… Ð±ÑƒÐ´ÑƒÑ‚ Ð°Ð²Ñ‚Ð¾Ð¼Ð°Ñ‚Ð¸Ñ‡ÐµÑÐºÐ¸ Ð¾Ñ‚Ð¿Ñ€Ð°Ð²Ð»ÐµÐ½Ñ‹ Ð² Bugsnag. ÐŸÐ¾Ð´Ñ€Ð¾Ð±Ð½ÐµÐµ ÑÐ¼. Ð² ÐŸÐ¾Ð»Ð¸Ñ‚Ð¸ÐºÐµ ÐºÐ¾Ð½Ñ„Ð¸Ð´ÐµÐ½Ñ†Ð¸Ð°Ð»ÑŒÐ½Ð¾ÑÑ‚Ð¸.\nÐ­Ñ‚Ñƒ Ð½Ð°ÑÑ‚Ñ€Ð¾Ð¹ÐºÑƒ Ð¼Ð¾Ð¶Ð½Ð¾ Ð¸Ð·Ð¼ÐµÐ½Ð¸Ñ‚ÑŒ Ð² Ð¼ÐµÐ½ÑŽ Ð² Ð»ÑŽÐ±Ð¾Ðµ Ð²Ñ€ÐµÐ¼Ñ.</string>
+    <string name="bugsnag_consent_restart_title">ÐŸÐµÑ€ÐµÐ·Ð°Ð¿ÑƒÑÑ‚Ð¸Ñ‚Ðµ Ð¿Ñ€Ð¸Ð»Ð¾Ð¶ÐµÐ½Ð¸Ðµ</string>
+    <string name="bugsnag_consent_restart_message">Ð§Ñ‚Ð¾Ð±Ñ‹ Ð½Ð°ÑÑ‚Ñ€Ð¾Ð¹ÐºÐ¸ Ð²ÑÑ‚ÑƒÐ¿Ð¸Ð»Ð¸ Ð² ÑÐ¸Ð»Ñƒ, Ð½ÐµÐ¾Ð±Ñ…Ð¾Ð´Ð¸Ð¼Ð¾ Ð¿ÐµÑ€ÐµÐ·Ð°Ð¿ÑƒÑÑ‚Ð¸Ñ‚ÑŒ Ð¿Ñ€Ð¸Ð»Ð¾Ð¶ÐµÐ½Ð¸Ðµ.</string>
+    <string name="action_bugsnag_consent">ÐžÑ‚Ñ‡Ñ‘Ñ‚Ñ‹ Ð¾ ÑÐ±Ð¾ÑÑ…</string>
+    <string name="dialog_howto">Ð˜Ð½ÑÑ‚Ñ€ÑƒÐºÑ†Ð¸Ñ</string>
+    <string name="no_browser_title">ÐÐµ ÑƒÐ´Ð°Ð»Ð¾ÑÑŒ Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚ÑŒ URL</string>
+    <string name="no_browser_message">ÐŸÐ¾Ñ…Ð¾Ð¶Ðµ, Ð½Ð° ÑƒÑÑ‚Ñ€Ð¾Ð¹ÑÑ‚Ð²Ðµ Ð½Ðµ ÑƒÑÑ‚Ð°Ð½Ð¾Ð²Ð»ÐµÐ½ Ð²ÐµÐ±-Ð±Ñ€Ð°ÑƒÐ·ÐµÑ€. Ð‘Ñ‹Ð»Ð° Ð¿Ñ€ÐµÐ´Ð¿Ñ€Ð¸Ð½ÑÑ‚Ð° Ð¿Ð¾Ð¿Ñ‹Ñ‚ÐºÐ° Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚ÑŒ ÑÐ»ÐµÐ´ÑƒÑŽÑ‰Ð¸Ð¹ URL:\n\n%1$s</string>
+    <string name="pref_show_qp">Ð’ÐºÐ»ÑŽÑ‡Ð¸Ñ‚ÑŒ Ð±Ñ‹ÑÑ‚Ñ€Ñ‹Ðµ ÐºÐ»Ð°Ð²Ð¸ÑˆÐ¸</string>
+    <string name="pref_show_fn">Ð’ÐºÐ»ÑŽÑ‡Ð¸Ñ‚ÑŒ ÐºÐ»Ð°Ð²Ð¸ÑˆÐ¸ FN</string>
+    <string name="pref_always_show_top_bar">Ð’ÑÐµÐ³Ð´Ð° Ð¿Ð¾ÐºÐ°Ð·Ñ‹Ð²Ð°Ñ‚ÑŒ Ð·Ð½Ð°Ñ‡ÐºÐ¸ Ð²ÐµÑ€Ñ…Ð½ÐµÐ¹ Ð¿Ð°Ð½ÐµÐ»Ð¸</string>
     <string name="theme">0</string>
-    <string name="shadows_activity_settings">Тени</string>
-    <string name="slider_auto">Авто</string>
-    <string name="controller_trigger_custom_values">Пользовательская (%1$d нажатие, %2$d отпускание)</string>
-    <string name="controller_trigger_custom">Пользовательская</string>
-    <string name="resolution_width_hint">Ширина</string>
-    <string name="resolution_height_hint">Высота</string>
-    <string name="resolution_native">Родное</string>
-    <string name="resolution_invalid">Введите корректные ширину и высоту.</string>
-    <string name="launch_preparing">Загрузка…</string>
-    <string name="launch_preparing_game">Подготовка OpenMW…</string>
-    <string name="launch_failed_title">Не удалось запустить OpenMW</string>
-    <string name="launch_failed_unknown">Неизвестная ошибка при подготовке OpenMW.</string>
-    <string name="user_configuration">Конфигурация пользователя</string>
-    <string name="action_theme_submenu">Тема ›</string>
-    <string name="theme_set_to">Установлена тема %1$s</string>
-    <string name="about_port_info">Этот порт подготовил Andreas \'Andiweli\' Stürmer\nНа основе порта CaveBros\nOpenMW разрабатывается командой OpenMW с 2008 года</string>
-    <string name="third_party_notices">Сведения о сторонних компонентах</string>
-    <string name="chooser_select">Выбрать</string>
-    <string name="chooser_create">Создать</string>
-    <string name="chooser_new_folder">Новая папка</string>
-    <string name="chooser_cancel">Отмена</string>
-    <string name="chooser_heading">Выбор хранилища</string>
-    <string name="chooser_internal_storage">Внутреннее хранилище</string>
-    <string name="chooser_free_space">Свободно %1$s</string>
-    <string name="chooser_folder_created">Папка создана</string>
-    <string name="chooser_folder_error">При создании папки произошла ошибка. Повторите попытку.</string>
-    <string name="chooser_folder_name">Имя папки</string>
-    <string name="chooser_empty_folder_name">Имя папки не может быть пустым</string>
+    <string name="shadows_activity_settings">Ð¢ÐµÐ½Ð¸</string>
+    <string name="slider_auto">ÐÐ²Ñ‚Ð¾</string>
+    <string name="controller_trigger_custom_values">ÐŸÐ¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»ÑŒÑÐºÐ°Ñ (%1$d Ð½Ð°Ð¶Ð°Ñ‚Ð¸Ðµ, %2$d Ð¾Ñ‚Ð¿ÑƒÑÐºÐ°Ð½Ð¸Ðµ)</string>
+    <string name="controller_trigger_custom">ÐŸÐ¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»ÑŒÑÐºÐ°Ñ</string>
+    <string name="resolution_width_hint">Ð¨Ð¸Ñ€Ð¸Ð½Ð°</string>
+    <string name="resolution_height_hint">Ð’Ñ‹ÑÐ¾Ñ‚Ð°</string>
+    <string name="resolution_native">Ð Ð¾Ð´Ð½Ð¾Ðµ</string>
+    <string name="resolution_invalid">Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ñ€Ñ€ÐµÐºÑ‚Ð½Ñ‹Ðµ ÑˆÐ¸Ñ€Ð¸Ð½Ñƒ Ð¸ Ð²Ñ‹ÑÐ¾Ñ‚Ñƒ.</string>
+    <string name="launch_preparing">Ð—Ð°Ð³Ñ€ÑƒÐ·ÐºÐ°â€¦</string>
+    <string name="launch_preparing_game">ÐŸÐ¾Ð´Ð³Ð¾Ñ‚Ð¾Ð²ÐºÐ° OpenMWâ€¦</string>
+    <string name="launch_failed_title">ÐÐµ ÑƒÐ´Ð°Ð»Ð¾ÑÑŒ Ð·Ð°Ð¿ÑƒÑÑ‚Ð¸Ñ‚ÑŒ OpenMW</string>
+    <string name="launch_failed_unknown">ÐÐµÐ¸Ð·Ð²ÐµÑÑ‚Ð½Ð°Ñ Ð¾ÑˆÐ¸Ð±ÐºÐ° Ð¿Ñ€Ð¸ Ð¿Ð¾Ð´Ð³Ð¾Ñ‚Ð¾Ð²ÐºÐµ OpenMW.</string>
+    <string name="user_configuration">ÐšÐ¾Ð½Ñ„Ð¸Ð³ÑƒÑ€Ð°Ñ†Ð¸Ñ Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»Ñ</string>
+    <string name="action_theme_submenu">Ð¢ÐµÐ¼Ð° â€º</string>
+    <string name="theme_set_to">Ð£ÑÑ‚Ð°Ð½Ð¾Ð²Ð»ÐµÐ½Ð° Ñ‚ÐµÐ¼Ð° %1$s</string>
+    <string name="about_port_info">Ð­Ñ‚Ð¾Ñ‚ Ð¿Ð¾Ñ€Ñ‚ Ð¿Ð¾Ð´Ð³Ð¾Ñ‚Ð¾Ð²Ð¸Ð» Andreas \'Andiweli\' StÃ¼rmer\nÐÐ° Ð¾ÑÐ½Ð¾Ð²Ðµ Ð¿Ð¾Ñ€Ñ‚Ð° CaveBros\nOpenMW Ñ€Ð°Ð·Ñ€Ð°Ð±Ð°Ñ‚Ñ‹Ð²Ð°ÐµÑ‚ÑÑ ÐºÐ¾Ð¼Ð°Ð½Ð´Ð¾Ð¹ OpenMW Ñ 2008 Ð³Ð¾Ð´Ð°</string>
+    <string name="third_party_notices">Ð¡Ð²ÐµÐ´ÐµÐ½Ð¸Ñ Ð¾ ÑÑ‚Ð¾Ñ€Ð¾Ð½Ð½Ð¸Ñ… ÐºÐ¾Ð¼Ð¿Ð¾Ð½ÐµÐ½Ñ‚Ð°Ñ…</string>
+    <string name="chooser_select">Ð’Ñ‹Ð±Ñ€Ð°Ñ‚ÑŒ</string>
+    <string name="chooser_create">Ð¡Ð¾Ð·Ð´Ð°Ñ‚ÑŒ</string>
+    <string name="chooser_new_folder">ÐÐ¾Ð²Ð°Ñ Ð¿Ð°Ð¿ÐºÐ°</string>
+    <string name="chooser_cancel">ÐžÑ‚Ð¼ÐµÐ½Ð°</string>
+    <string name="chooser_heading">Ð’Ñ‹Ð±Ð¾Ñ€ Ñ…Ñ€Ð°Ð½Ð¸Ð»Ð¸Ñ‰Ð°</string>
+    <string name="chooser_internal_storage">Ð’Ð½ÑƒÑ‚Ñ€ÐµÐ½Ð½ÐµÐµ Ñ…Ñ€Ð°Ð½Ð¸Ð»Ð¸Ñ‰Ðµ</string>
+    <string name="chooser_free_space">Ð¡Ð²Ð¾Ð±Ð¾Ð´Ð½Ð¾ %1$s</string>
+    <string name="chooser_folder_created">ÐŸÐ°Ð¿ÐºÐ° ÑÐ¾Ð·Ð´Ð°Ð½Ð°</string>
+    <string name="chooser_folder_error">ÐŸÑ€Ð¸ ÑÐ¾Ð·Ð´Ð°Ð½Ð¸Ð¸ Ð¿Ð°Ð¿ÐºÐ¸ Ð¿Ñ€Ð¾Ð¸Ð·Ð¾ÑˆÐ»Ð° Ð¾ÑˆÐ¸Ð±ÐºÐ°. ÐŸÐ¾Ð²Ñ‚Ð¾Ñ€Ð¸Ñ‚Ðµ Ð¿Ð¾Ð¿Ñ‹Ñ‚ÐºÑƒ.</string>
+    <string name="chooser_folder_name">Ð˜Ð¼Ñ Ð¿Ð°Ð¿ÐºÐ¸</string>
+    <string name="chooser_empty_folder_name">Ð˜Ð¼Ñ Ð¿Ð°Ð¿ÐºÐ¸ Ð½Ðµ Ð¼Ð¾Ð¶ÐµÑ‚ Ð±Ñ‹Ñ‚ÑŒ Ð¿ÑƒÑÑ‚Ñ‹Ð¼</string>
     <string-array name="pref_encoding_entries">
-        <item>Центральная и Восточная Европа (win1250)</item>
-        <item>Кириллица (win1251)</item>
-        <item>Латиница (win1252)</item>
+        <item>Ð¦ÐµÐ½Ñ‚Ñ€Ð°Ð»ÑŒÐ½Ð°Ñ Ð¸ Ð’Ð¾ÑÑ‚Ð¾Ñ‡Ð½Ð°Ñ Ð•Ð²Ñ€Ð¾Ð¿Ð° (win1250)</item>
+        <item>ÐšÐ¸Ñ€Ð¸Ð»Ð»Ð¸Ñ†Ð° (win1251)</item>
+        <item>Ð›Ð°Ñ‚Ð¸Ð½Ð¸Ñ†Ð° (win1252)</item>
     </string-array>
     <string-array name="gs_factor_strength_into_hand_to_hand_combat_entries">
-        <item>Выкл.</item>
-        <item>Влияет на оборотней</item>
-        <item>Не влияет на оборотней</item>
+        <item>Ð’Ñ‹ÐºÐ».</item>
+        <item>Ð’Ð»Ð¸ÑÐµÑ‚ Ð½Ð° Ð¾Ð±Ð¾Ñ€Ð¾Ñ‚Ð½ÐµÐ¹</item>
+        <item>ÐÐµ Ð²Ð»Ð¸ÑÐµÑ‚ Ð½Ð° Ð¾Ð±Ð¾Ñ€Ð¾Ñ‚Ð½ÐµÐ¹</item>
     </string-array>
     <string-array name="gs_show_owned_entries">
-        <item>Выкл.</item>
-        <item>Только подсказка</item>
-        <item>Только прицел</item>
-        <item>Подсказка и прицел</item>
+        <item>Ð’Ñ‹ÐºÐ».</item>
+        <item>Ð¢Ð¾Ð»ÑŒÐºÐ¾ Ð¿Ð¾Ð´ÑÐºÐ°Ð·ÐºÐ°</item>
+        <item>Ð¢Ð¾Ð»ÑŒÐºÐ¾ Ð¿Ñ€Ð¸Ñ†ÐµÐ»</item>
+        <item>ÐŸÐ¾Ð´ÑÐºÐ°Ð·ÐºÐ° Ð¸ Ð¿Ñ€Ð¸Ñ†ÐµÐ»</item>
     </string-array>
     <string-array name="pref_omw051_controller_trigger_sensitivity_entries">
-        <item>По умолчанию OpenMW (15/16 нажатие, 13/16 отпускание)</item>
-        <item>Сбалансированная (12/16 нажатие, 10/16 отпускание)</item>
-        <item>Чувствительная (8/16 нажатие, 6/16 отпускание)</item>
+        <item>ÐŸÐ¾ ÑƒÐ¼Ð¾Ð»Ñ‡Ð°Ð½Ð¸ÑŽ OpenMW (15/16 Ð½Ð°Ð¶Ð°Ñ‚Ð¸Ðµ, 13/16 Ð¾Ñ‚Ð¿ÑƒÑÐºÐ°Ð½Ð¸Ðµ)</item>
+        <item>Ð¡Ð±Ð°Ð»Ð°Ð½ÑÐ¸Ñ€Ð¾Ð²Ð°Ð½Ð½Ð°Ñ (12/16 Ð½Ð°Ð¶Ð°Ñ‚Ð¸Ðµ, 10/16 Ð¾Ñ‚Ð¿ÑƒÑÐºÐ°Ð½Ð¸Ðµ)</item>
+        <item>Ð§ÑƒÐ²ÑÑ‚Ð²Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ð°Ñ (8/16 Ð½Ð°Ð¶Ð°Ñ‚Ð¸Ðµ, 6/16 Ð¾Ñ‚Ð¿ÑƒÑÐºÐ°Ð½Ð¸Ðµ)</item>
     </string-array>
     <string-array name="pref_textureShrinking_entries">
-        <item>Нет</item>
-        <item>Низкое</item>
-        <item>Среднее</item>
-        <item>Высокое</item>
+        <item>ÐÐµÑ‚</item>
+        <item>ÐÐ¸Ð·ÐºÐ¾Ðµ</item>
+        <item>Ð¡Ñ€ÐµÐ´Ð½ÐµÐµ</item>
+        <item>Ð’Ñ‹ÑÐ¾ÐºÐ¾Ðµ</item>
     </string-array>
     <string-array name="pref_shadersDir_entries">
-        <item>Оригинальные</item>
-        <item>Изменённые</item>
+        <item>ÐžÑ€Ð¸Ð³Ð¸Ð½Ð°Ð»ÑŒÐ½Ñ‹Ðµ</item>
+        <item>Ð˜Ð·Ð¼ÐµÐ½Ñ‘Ð½Ð½Ñ‹Ðµ</item>
         <item>Zesterer</item>
         <item>OMWFX</item>
     </string-array>
     <string-array name="pref_mouse_mode_entries">
-        <item>Гибридный</item>
-        <item>Относительное управление джойстиком</item>
-        <item>Абсолютное сенсорное управление</item>
+        <item>Ð“Ð¸Ð±Ñ€Ð¸Ð´Ð½Ñ‹Ð¹</item>
+        <item>ÐžÑ‚Ð½Ð¾ÑÐ¸Ñ‚ÐµÐ»ÑŒÐ½Ð¾Ðµ ÑƒÐ¿Ñ€Ð°Ð²Ð»ÐµÐ½Ð¸Ðµ Ð´Ð¶Ð¾Ð¹ÑÑ‚Ð¸ÐºÐ¾Ð¼</item>
+        <item>ÐÐ±ÑÐ¾Ð»ÑŽÑ‚Ð½Ð¾Ðµ ÑÐµÐ½ÑÐ¾Ñ€Ð½Ð¾Ðµ ÑƒÐ¿Ñ€Ð°Ð²Ð»ÐµÐ½Ð¸Ðµ</item>
     </string-array>
     <string-array name="gs_shadow_quality_entries">
-        <item>Низкое</item>
-        <item>Среднее</item>
-        <item>Высокое</item>
-        <item>Очень высокое</item>
+        <item>ÐÐ¸Ð·ÐºÐ¾Ðµ</item>
+        <item>Ð¡Ñ€ÐµÐ´Ð½ÐµÐµ</item>
+        <item>Ð’Ñ‹ÑÐ¾ÐºÐ¾Ðµ</item>
+        <item>ÐžÑ‡ÐµÐ½ÑŒ Ð²Ñ‹ÑÐ¾ÐºÐ¾Ðµ</item>
     </string-array>
     <string-array name="gs_shadow_distance_entries">
-        <item>Малая</item>
-        <item>Средняя</item>
-        <item>Большая</item>
+        <item>ÐœÐ°Ð»Ð°Ñ</item>
+        <item>Ð¡Ñ€ÐµÐ´Ð½ÑÑ</item>
+        <item>Ð‘Ð¾Ð»ÑŒÑˆÐ°Ñ</item>
     </string-array>
     <string name="osk_shift">Shift</string>
     <string name="osk_caps_lock">Caps Lock</string>
-    <string name="osk_language">Язык</string>
-    <string name="sdl_error_title">Ошибка SDL</string>
-    <string name="sdl_exit">Выйти</string>
-    <string name="sdl_start_error">При запуске приложения произошла ошибка. Повторите попытку и/или переустановите приложение.\n\nОшибка: %1$s</string>
-    <string name="navmesh_generating_cache">СОЗДАНИЕ КЭША NAVMESH</string>
+    <string name="osk_language">Ð¯Ð·Ñ‹Ðº</string>
+    <string name="sdl_error_title">ÐžÑˆÐ¸Ð±ÐºÐ° SDL</string>
+    <string name="sdl_exit">Ð’Ñ‹Ð¹Ñ‚Ð¸</string>
+    <string name="sdl_start_error">ÐŸÑ€Ð¸ Ð·Ð°Ð¿ÑƒÑÐºÐµ Ð¿Ñ€Ð¸Ð»Ð¾Ð¶ÐµÐ½Ð¸Ñ Ð¿Ñ€Ð¾Ð¸Ð·Ð¾ÑˆÐ»Ð° Ð¾ÑˆÐ¸Ð±ÐºÐ°. ÐŸÐ¾Ð²Ñ‚Ð¾Ñ€Ð¸Ñ‚Ðµ Ð¿Ð¾Ð¿Ñ‹Ñ‚ÐºÑƒ Ð¸/Ð¸Ð»Ð¸ Ð¿ÐµÑ€ÐµÑƒÑÑ‚Ð°Ð½Ð¾Ð²Ð¸Ñ‚Ðµ Ð¿Ñ€Ð¸Ð»Ð¾Ð¶ÐµÐ½Ð¸Ðµ.\n\nÐžÑˆÐ¸Ð±ÐºÐ°: %1$s</string>
+    <string name="navmesh_generating_cache">Ð¡ÐžÐ—Ð”ÐÐÐ˜Ð• ÐšÐ­Ð¨Ð NAVMESH</string>
 
     <!-- Game folder validation -->
-    <string name="game_files_checking">Проверка файлов игры…</string>
-    <string name="game_files_selection_unchanged">Предыдущий выбор не изменён.</string>
-    <string name="game_files_storage_unavailable_title">Хранилище недоступно</string>
-    <string name="game_files_storage_unavailable_message">Хранилище с папкой игры сейчас недоступно:\n%1$s\n\nВставьте SD-карту или дождитесь, пока Android её подключит. Сохранённый выбор не удаляется.</string>
-    <string name="game_files_folder_not_found_title">Папка не найдена</string>
-    <string name="game_files_folder_not_found_message">Папка игры не найдена:\n%1$s\n\nВозможно, она была перемещена или переименована. Если она находится на SD-карте, проверьте, вставлена ли карта.</string>
-    <string name="game_files_access_denied_title">Нет доступа на чтение</string>
-    <string name="game_files_access_denied_message">OpenMW не может прочитать этот файл или папку:\n%1$s\n\nПроверьте в настройках приложения, предоставлен ли доступ к хранилищу. Если доступ предоставлен, это устройство не разрешает прямой доступ к этому расположению; в этом случае скопируйте файлы игры во внутреннюю память.</string>
-    <string name="game_files_missing_message">В выбранной папке отсутствует:\n%1$s\n\nВыберите папку, содержащую файл «Morrowind.ini» и каталог «Data Files».</string>
-    <string name="game_files_read_failed_title">Ошибка чтения</string>
-    <string name="game_files_read_failed_message">Не удалось прочитать файл:\n%1$s\n(%2$s)</string>
+    <string name="game_files_checking">ÐŸÑ€Ð¾Ð²ÐµÑ€ÐºÐ° Ñ„Ð°Ð¹Ð»Ð¾Ð² Ð¸Ð³Ñ€Ñ‹â€¦</string>
+    <string name="game_files_selection_unchanged">ÐŸÑ€ÐµÐ´Ñ‹Ð´ÑƒÑ‰Ð¸Ð¹ Ð²Ñ‹Ð±Ð¾Ñ€ Ð½Ðµ Ð¸Ð·Ð¼ÐµÐ½Ñ‘Ð½.</string>
+    <string name="game_files_storage_unavailable_title">Ð¥Ñ€Ð°Ð½Ð¸Ð»Ð¸Ñ‰Ðµ Ð½ÐµÐ´Ð¾ÑÑ‚ÑƒÐ¿Ð½Ð¾</string>
+    <string name="game_files_storage_unavailable_message">Ð¥Ñ€Ð°Ð½Ð¸Ð»Ð¸Ñ‰Ðµ Ñ Ð¿Ð°Ð¿ÐºÐ¾Ð¹ Ð¸Ð³Ñ€Ñ‹ ÑÐµÐ¹Ñ‡Ð°Ñ Ð½ÐµÐ´Ð¾ÑÑ‚ÑƒÐ¿Ð½Ð¾:\n%1$s\n\nÐ’ÑÑ‚Ð°Ð²ÑŒÑ‚Ðµ SD-ÐºÐ°Ñ€Ñ‚Ñƒ Ð¸Ð»Ð¸ Ð´Ð¾Ð¶Ð´Ð¸Ñ‚ÐµÑÑŒ, Ð¿Ð¾ÐºÐ° Android ÐµÑ‘ Ð¿Ð¾Ð´ÐºÐ»ÑŽÑ‡Ð¸Ñ‚. Ð¡Ð¾Ñ…Ñ€Ð°Ð½Ñ‘Ð½Ð½Ñ‹Ð¹ Ð²Ñ‹Ð±Ð¾Ñ€ Ð½Ðµ ÑƒÐ´Ð°Ð»ÑÐµÑ‚ÑÑ.</string>
+    <string name="game_files_folder_not_found_title">ÐŸÐ°Ð¿ÐºÐ° Ð½Ðµ Ð½Ð°Ð¹Ð´ÐµÐ½Ð°</string>
+    <string name="game_files_folder_not_found_message">ÐŸÐ°Ð¿ÐºÐ° Ð¸Ð³Ñ€Ñ‹ Ð½Ðµ Ð½Ð°Ð¹Ð´ÐµÐ½Ð°:\n%1$s\n\nÐ’Ð¾Ð·Ð¼Ð¾Ð¶Ð½Ð¾, Ð¾Ð½Ð° Ð±Ñ‹Ð»Ð° Ð¿ÐµÑ€ÐµÐ¼ÐµÑ‰ÐµÐ½Ð° Ð¸Ð»Ð¸ Ð¿ÐµÑ€ÐµÐ¸Ð¼ÐµÐ½Ð¾Ð²Ð°Ð½Ð°. Ð•ÑÐ»Ð¸ Ð¾Ð½Ð° Ð½Ð°Ñ…Ð¾Ð´Ð¸Ñ‚ÑÑ Ð½Ð° SD-ÐºÐ°Ñ€Ñ‚Ðµ, Ð¿Ñ€Ð¾Ð²ÐµÑ€ÑŒÑ‚Ðµ, Ð²ÑÑ‚Ð°Ð²Ð»ÐµÐ½Ð° Ð»Ð¸ ÐºÐ°Ñ€Ñ‚Ð°.</string>
+    <string name="game_files_access_denied_title">ÐÐµÑ‚ Ð´Ð¾ÑÑ‚ÑƒÐ¿Ð° Ð½Ð° Ñ‡Ñ‚ÐµÐ½Ð¸Ðµ</string>
+    <string name="game_files_access_denied_message">OpenMW Ð½Ðµ Ð¼Ð¾Ð¶ÐµÑ‚ Ð¿Ñ€Ð¾Ñ‡Ð¸Ñ‚Ð°Ñ‚ÑŒ ÑÑ‚Ð¾Ñ‚ Ñ„Ð°Ð¹Ð» Ð¸Ð»Ð¸ Ð¿Ð°Ð¿ÐºÑƒ:\n%1$s\n\nÐŸÑ€Ð¾Ð²ÐµÑ€ÑŒÑ‚Ðµ Ð² Ð½Ð°ÑÑ‚Ñ€Ð¾Ð¹ÐºÐ°Ñ… Ð¿Ñ€Ð¸Ð»Ð¾Ð¶ÐµÐ½Ð¸Ñ, Ð¿Ñ€ÐµÐ´Ð¾ÑÑ‚Ð°Ð²Ð»ÐµÐ½ Ð»Ð¸ Ð´Ð¾ÑÑ‚ÑƒÐ¿ Ðº Ñ…Ñ€Ð°Ð½Ð¸Ð»Ð¸Ñ‰Ñƒ. Ð•ÑÐ»Ð¸ Ð´Ð¾ÑÑ‚ÑƒÐ¿ Ð¿Ñ€ÐµÐ´Ð¾ÑÑ‚Ð°Ð²Ð»ÐµÐ½, ÑÑ‚Ð¾ ÑƒÑÑ‚Ñ€Ð¾Ð¹ÑÑ‚Ð²Ð¾ Ð½Ðµ Ñ€Ð°Ð·Ñ€ÐµÑˆÐ°ÐµÑ‚ Ð¿Ñ€ÑÐ¼Ð¾Ð¹ Ð´Ð¾ÑÑ‚ÑƒÐ¿ Ðº ÑÑ‚Ð¾Ð¼Ñƒ Ñ€Ð°ÑÐ¿Ð¾Ð»Ð¾Ð¶ÐµÐ½Ð¸ÑŽ; Ð² ÑÑ‚Ð¾Ð¼ ÑÐ»ÑƒÑ‡Ð°Ðµ ÑÐºÐ¾Ð¿Ð¸Ñ€ÑƒÐ¹Ñ‚Ðµ Ñ„Ð°Ð¹Ð»Ñ‹ Ð¸Ð³Ñ€Ñ‹ Ð²Ð¾ Ð²Ð½ÑƒÑ‚Ñ€ÐµÐ½Ð½ÑŽÑŽ Ð¿Ð°Ð¼ÑÑ‚ÑŒ.</string>
+    <string name="game_files_missing_message">Ð’ Ð²Ñ‹Ð±Ñ€Ð°Ð½Ð½Ð¾Ð¹ Ð¿Ð°Ð¿ÐºÐµ Ð¾Ñ‚ÑÑƒÑ‚ÑÑ‚Ð²ÑƒÐµÑ‚:\n%1$s\n\nÐ’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð¿Ð°Ð¿ÐºÑƒ, ÑÐ¾Ð´ÐµÑ€Ð¶Ð°Ñ‰ÑƒÑŽ Ñ„Ð°Ð¹Ð» Â«Morrowind.iniÂ» Ð¸ ÐºÐ°Ñ‚Ð°Ð»Ð¾Ð³ Â«Data FilesÂ».</string>
+    <string name="game_files_read_failed_title">ÐžÑˆÐ¸Ð±ÐºÐ° Ñ‡Ñ‚ÐµÐ½Ð¸Ñ</string>
+    <string name="game_files_read_failed_message">ÐÐµ ÑƒÐ´Ð°Ð»Ð¾ÑÑŒ Ð¿Ñ€Ð¾Ñ‡Ð¸Ñ‚Ð°Ñ‚ÑŒ Ñ„Ð°Ð¹Ð»:\n%1$s\n(%2$s)</string>
 
-    <!-- Перенос старого места хранения -->
-    <string name="legacy_storage_migration_progress">Перенос сохранений и настроек в новое место хранения…</string>
-    <string name="legacy_storage_migration_done_title">Сохранения перенесены</string>
-    <string name="legacy_storage_migration_conflicts_message">Некоторые файлы были и в старом, и в новом месте. Файлы в новом месте сохранены; отличающиеся старые версии сохранены здесь:\n%1$s</string>
-    <string name="legacy_storage_migration_failed_title">Сохранения не перенесены</string>
-    <string name="legacy_storage_migration_no_space_message">Не удалось перенести сохранения и настройки из\n%1$s\nтак как требуется %2$s свободного места. Старая папка не изменена. Освободите место и перезапустите OpenMW, чтобы повторить попытку.</string>
-    <string name="legacy_storage_migration_failed_message">Не удалось перенести сохранения и настройки из\n%1$s\n(%2$s). Старая папка не изменена. Перезапустите OpenMW, чтобы повторить попытку.</string>
-</resources>
+    <!-- ÐŸÐµÑ€ÐµÐ½Ð¾Ñ ÑÑ‚Ð°Ñ€Ð¾Ð³Ð¾ Ð¼ÐµÑÑ‚Ð° Ñ…Ñ€Ð°Ð½ÐµÐ½Ð¸Ñ -->
+    <string name="legacy_storage_migration_progress">ÐŸÐµÑ€ÐµÐ½Ð¾Ñ ÑÐ¾Ñ…Ñ€Ð°Ð½ÐµÐ½Ð¸Ð¹ Ð¸ Ð½Ð°ÑÑ‚Ñ€Ð¾ÐµÐº Ð² Ð½Ð¾Ð²Ð¾Ðµ Ð¼ÐµÑÑ‚Ð¾ Ñ…Ñ€Ð°Ð½ÐµÐ½Ð¸Ñâ€¦</string>
+    <string name="legacy_storage_migration_done_title">Ð¡Ð¾Ñ…Ñ€Ð°Ð½ÐµÐ½Ð¸Ñ Ð¿ÐµÑ€ÐµÐ½ÐµÑÐµÐ½Ñ‹</string>
+    <string name="legacy_storage_migration_conflicts_message">ÐÐµÐºÐ¾Ñ‚Ð¾Ñ€Ñ‹Ðµ Ñ„Ð°Ð¹Ð»Ñ‹ Ð±Ñ‹Ð»Ð¸ Ð¸ Ð² ÑÑ‚Ð°Ñ€Ð¾Ð¼, Ð¸ Ð² Ð½Ð¾Ð²Ð¾Ð¼ Ð¼ÐµÑÑ‚Ðµ. Ð¤Ð°Ð¹Ð»Ñ‹ Ð² Ð½Ð¾Ð²Ð¾Ð¼ Ð¼ÐµÑÑ‚Ðµ ÑÐ¾Ñ…Ñ€Ð°Ð½ÐµÐ½Ñ‹; Ð¾Ñ‚Ð»Ð¸Ñ‡Ð°ÑŽÑ‰Ð¸ÐµÑÑ ÑÑ‚Ð°Ñ€Ñ‹Ðµ Ð²ÐµÑ€ÑÐ¸Ð¸ ÑÐ¾Ñ…Ñ€Ð°Ð½ÐµÐ½Ñ‹ Ð·Ð´ÐµÑÑŒ:\n%1$s</string>
+    <string name="legacy_storage_migration_failed_title">Ð¡Ð¾Ñ…Ñ€Ð°Ð½ÐµÐ½Ð¸Ñ Ð½Ðµ Ð¿ÐµÑ€ÐµÐ½ÐµÑÐµÐ½Ñ‹</string>
+    <string name="legacy_storage_migration_no_space_message">ÐÐµ ÑƒÐ´Ð°Ð»Ð¾ÑÑŒ Ð¿ÐµÑ€ÐµÐ½ÐµÑÑ‚Ð¸ ÑÐ¾Ñ…Ñ€Ð°Ð½ÐµÐ½Ð¸Ñ Ð¸ Ð½Ð°ÑÑ‚Ñ€Ð¾Ð¹ÐºÐ¸ Ð¸Ð·\n%1$s\nÑ‚Ð°Ðº ÐºÐ°Ðº Ñ‚Ñ€ÐµÐ±ÑƒÐµÑ‚ÑÑ %2$s ÑÐ²Ð¾Ð±Ð¾Ð´Ð½Ð¾Ð³Ð¾ Ð¼ÐµÑÑ‚Ð°. Ð¡Ñ‚Ð°Ñ€Ð°Ñ Ð¿Ð°Ð¿ÐºÐ° Ð½Ðµ Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð°. ÐžÑÐ²Ð¾Ð±Ð¾Ð´Ð¸Ñ‚Ðµ Ð¼ÐµÑÑ‚Ð¾ Ð¸ Ð¿ÐµÑ€ÐµÐ·Ð°Ð¿ÑƒÑÑ‚Ð¸Ñ‚Ðµ OpenMW, Ñ‡Ñ‚Ð¾Ð±Ñ‹ Ð¿Ð¾Ð²Ñ‚Ð¾Ñ€Ð¸Ñ‚ÑŒ Ð¿Ð¾Ð¿Ñ‹Ñ‚ÐºÑƒ.</string>
+    <string name="legacy_storage_migration_failed_message">ÐÐµ ÑƒÐ´Ð°Ð»Ð¾ÑÑŒ Ð¿ÐµÑ€ÐµÐ½ÐµÑÑ‚Ð¸ ÑÐ¾Ñ…Ñ€Ð°Ð½ÐµÐ½Ð¸Ñ Ð¸ Ð½Ð°ÑÑ‚Ñ€Ð¾Ð¹ÐºÐ¸ Ð¸Ð·\n%1$s\n(%2$s). Ð¡Ñ‚Ð°Ñ€Ð°Ñ Ð¿Ð°Ð¿ÐºÐ° Ð½Ðµ Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð°. ÐŸÐµÑ€ÐµÐ·Ð°Ð¿ÑƒÑÑ‚Ð¸Ñ‚Ðµ OpenMW, Ñ‡Ñ‚Ð¾Ð±Ñ‹ Ð¿Ð¾Ð²Ñ‚Ð¾Ñ€Ð¸Ñ‚ÑŒ Ð¿Ð¾Ð¿Ñ‹Ñ‚ÐºÑƒ.</string>
+    <string name="pref_render_scale">Render Resolution</string>
+    <string name="pref_render_scale_summary">Internal 3D render resolution. Lower values improve performance; SGSR upscales to full screen.</string>
+    <string name="pref_sgsr_sharpness">SGSR Sharpness</string>
+    <string name="pref_sgsr_sharpness_summary">Edge sharpness for Snapdragon Game Super Resolution upscaling.</string></resources>

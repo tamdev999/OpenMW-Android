@@ -1,0 +1,354 @@
+--- omw-base/apps/openmw/mwrender/postprocessor.cpp	2026-11-15 21:41:35.537036520 -0500
++++ b/apps/openmw/mwrender/postprocessor.cpp	2026-11-15 21:32:56.758007065 -0500
+@@ -138,6 +138,33 @@
+         mHeight = gc->getTraits()->height;
+         Log(Debug::Info) << "OpenMW 0.51 Android renderer: " << mWidth << "x" << mHeight
+                          << ", Tex_Depth scene binding";
++        // RENDER_SCALE_SGSR1: read switches once at startup
++        {
++            const char* scaleEnv = std::getenv("OPENMW_RENDER_SCALE");
++            if (scaleEnv)
++            {
++                char* end = nullptr;
++                float v = std::strtof(scaleEnv, &end);
++                if (end != scaleEnv)
++                    mRenderScale = std::max(0.5f, std::min(1.0f, v));
++            }
++            const char* upscalerEnv = std::getenv("OPENMW_SCENE_UPSCALER");
++            if (upscalerEnv && std::string(upscalerEnv) == "bilinear")
++                mUpscaler = 0;
++            const char* sharpEnv = std::getenv("OPENMW_SGSR_SHARPNESS");
++            if (sharpEnv)
++            {
++                char* end = nullptr;
++                float v = std::strtof(sharpEnv, &end);
++                if (end != sharpEnv)
++                    mSharpness = std::max(1.0f, std::min(2.0f, v));
++            }
++            mScaled = (mRenderScale < 0.999f) && !Stereo::getStereo();
++            if (mScaled)
++                Log(Debug::Info) << "OPENMW_RENDER_SCALE=" << mRenderScale
++                                 << " upscaler=" << (mUpscaler == 1 ? "sgsr1" : "bilinear")
++                                 << " sharpness=" << mSharpness;
++        }
+ #endif
+ 
+         auto& shaderManager = mRendering.getResourceSystem()->getSceneManager()->getShaderManager();
+@@ -323,6 +350,10 @@
+         mCanvases[frameId]->setTextureDepth(getTexture(Tex_OpaqueDepth, frameId));
+ #endif
+         mCanvases[frameId]->setTextureDistortion(getTexture(Tex_Distortion, frameId));
++        // RENDER_SCALE_SGSR1
++        mCanvases[frameId]->setRenderScaled(mScaled);
++        mCanvases[frameId]->setUpscaler(mUpscaler);
++        mCanvases[frameId]->setSharpness(mSharpness);
+ 
+         mTransparentDepthPostPass->mFbo[frameId] = mFbos[frameId][FBO_Primary];
+         mTransparentDepthPostPass->mMsaaFbo[frameId] = mFbos[frameId][FBO_Multisample];
+@@ -333,8 +364,13 @@
+ 
+         size_t frame = cv->getTraversalNumber();
+ 
+-        mStateUpdater->setResolution(osg::Vec2f(
+-            static_cast<float>(cv->getViewport()->width()), static_cast<float>(cv->getViewport()->height())));
++        // RENDER_SCALE_SGSR1: effects see the scene resolution, not the window
++        if (mScaled)
++            mStateUpdater->setResolution(osg::Vec2f(
++                static_cast<float>(renderWidth()), static_cast<float>(renderHeight())));
++        else
++            mStateUpdater->setResolution(osg::Vec2f(
++                static_cast<float>(cv->getViewport()->width()), static_cast<float>(cv->getViewport()->height())));
+ 
+         // per-frame data
+         if (frame != mLastFrameNumber)
+@@ -885,6 +921,9 @@
+     {
+         if (Stereo::getStereo())
+             return Stereo::Manager::instance().eyeResolution().x();
++        // RENDER_SCALE_SGSR1
++        if (mScaled)
++            return std::max(2, (static_cast<int>(mWidth * mRenderScale + 0.5f)) & ~1);
+         return mWidth;
+     }
+ 
+@@ -892,6 +931,9 @@
+     {
+         if (Stereo::getStereo())
+             return Stereo::Manager::instance().eyeResolution().y();
++        // RENDER_SCALE_SGSR1
++        if (mScaled)
++            return std::max(2, (static_cast<int>(mHeight * mRenderScale + 0.5f)) & ~1);
+         return mHeight;
+     }
+ 
+--- omw-base/apps/openmw/mwrender/postprocessor.hpp	2026-11-15 21:41:35.529796340 -0500
++++ b/apps/openmw/mwrender/postprocessor.hpp	2026-11-15 21:32:56.758156816 -0500
+@@ -197,6 +197,9 @@
+ 
+         int renderWidth() const;
+         int renderHeight() const;
++        bool isRenderScaled() const { return mScaled; }
++        int  getUpscaler()    const { return mUpscaler; }
++        float getSharpness()  const { return mSharpness; }
+ 
+         void triggerShaderReload();
+ 
+@@ -270,6 +273,11 @@
+         int mHeight;
+ #endif
+         int mSamples;
++        // RENDER_SCALE_SGSR1
++        float mRenderScale  = 1.0f;
++        bool  mScaled       = false;  // (mRenderScale < 0.999) && !stereo
++        int   mUpscaler     = 1;      // 1 = sgsr1, 0 = bilinear
++        float mSharpness    = 2.0f;
+ 
+         osg::ref_ptr<Fx::StateUpdater> mStateUpdater;
+         osg::ref_ptr<PingPongCull> mPingPongCull;
+--- omw-base/apps/openmw/mwrender/pingpongcull.cpp	2026-05-30 09:30:14.000000000 -0400
++++ b/apps/openmw/mwrender/pingpongcull.cpp	2026-11-15 21:32:56.758265998 -0500
+@@ -18,8 +18,9 @@
+         : mViewportStateset(nullptr)
+         , mPostProcessor(pp)
+     {
+-        if (Stereo::getStereo())
++        if (Stereo::getStereo() || pp->isRenderScaled())
+         {
++            // RENDER_SCALE_SGSR1: also needed when scene is at reduced resolution
+             mViewportStateset = new osg::StateSet();
+             mViewport = new osg::Viewport;
+             mViewportStateset->setAttribute(mViewport);
+--- omw-base/apps/openmw/mwrender/pingpongcanvas.cpp	2026-11-15 21:41:35.566876134 -0500
++++ b/apps/openmw/mwrender/pingpongcanvas.cpp	2026-11-15 21:38:21.931004106 -0500
+@@ -96,6 +96,116 @@
+         mMultiviewResolveProgram = shaderManager.getProgram("multiview_resolve");
+         mMultiviewResolveStateSet->setAttributeAndModes(mMultiviewResolveProgram);
+         mMultiviewResolveStateSet->addUniform(new osg::Uniform("lastShader", 0));
++
++#ifdef ANDROID
++        // RENDER_SCALE_SGSR1: build SGSR1 upscale state set
++        {
++            // Vertex shader: fills screen, outputs uv = vertex.xy*0.5+0.5
++            // The fullscreen_tri.vert is patched (no default initializer) but
++            // the SGSR vert is a self-contained string; no dependency on that file.
++            static const char* sgsrVert = R"GLSL(
++#version 120
++// SGSR1 vertex - RENDER_SCALE_SGSR1
++varying vec2 uv;
++void main()
++{
++    gl_Position = vec4(gl_Vertex.xy, 0.0, 1.0);
++    uv = gl_Position.xy * 0.5 + 0.5;
++}
++)GLSL";
++            // Fragment shader: Qualcomm SGSR1 ported to GLSL 1.20
++            // Copyright (c) 2025, Qualcomm Innovation Center, Inc.
++            // SPDX-License-Identifier: BSD-3-Clause
++            // textureGather replaced by four texture2D fetches at texel centres.
++            static const char* sgsrFrag = R"GLSL(
++#version 120
++// SGSR1 - Copyright (c) 2025, Qualcomm Innovation Center, Inc.
++// SPDX-License-Identifier: BSD-3-Clause. Ported to GLSL 1.20 (no textureGather).
++uniform sampler2D ps0;
++uniform vec4 ViewportInfo;    // xy = 1/inputSize, zw = inputSize
++uniform float EdgeSharpness;  // 1.0 .. 2.0
++varying vec2 uv;
++float fastLanczos2(float x)
++{
++    float wA = x - 4.0;
++    float wB = x * wA - wA;
++    wA *= wA;
++    return wB * wA;
++}
++vec2 weightY(float dx, float dy, float c, float std2)
++{
++    float x = ((dx * dx) + (dy * dy)) * 0.55 + clamp(abs(c) * std2, 0.0, 1.0);
++    float w = fastLanczos2(x);
++    return vec2(w, w * c);
++}
++vec4 gatherG(vec2 coord)
++{
++    vec2 h = 0.5 * ViewportInfo.xy;
++    return vec4(texture2D(ps0, coord + vec2(-h.x,  h.y)).g,
++                texture2D(ps0, coord + vec2( h.x,  h.y)).g,
++                texture2D(ps0, coord + vec2( h.x, -h.y)).g,
++                texture2D(ps0, coord + vec2(-h.x, -h.y)).g);
++}
++void main()
++{
++    vec4 color;
++    color.xyz = texture2D(ps0, uv).xyz;
++    vec2 imgCoord = uv * ViewportInfo.zw + vec2(-0.5, 0.5);
++    vec2 imgCoordPixel = floor(imgCoord);
++    vec2 coord = imgCoordPixel * ViewportInfo.xy;
++    vec2 pl = imgCoord - imgCoordPixel;
++    vec4 left = gatherG(coord);
++    float edgeVote = abs(left.z - left.y) + abs(color.g - left.y) + abs(color.g - left.z);
++    if (edgeVote > 8.0 / 255.0)
++    {
++        coord.x += ViewportInfo.x;
++        vec4 right = gatherG(coord + vec2(ViewportInfo.x, 0.0));
++        vec4 upDown;
++        upDown.xy = gatherG(coord + vec2(0.0, -ViewportInfo.y)).wz;
++        upDown.zw = gatherG(coord + vec2(0.0,  ViewportInfo.y)).yx;
++        float mean = (left.y + left.z + right.x + right.w) * 0.25;
++        left    -= vec4(mean);
++        right   -= vec4(mean);
++        upDown  -= vec4(mean);
++        color.w  = color.g - mean;
++        float sum = abs(left.x)   + abs(left.y)   + abs(left.z)   + abs(left.w)
++                  + abs(right.x)  + abs(right.y)  + abs(right.z)  + abs(right.w)
++                  + abs(upDown.x) + abs(upDown.y) + abs(upDown.z) + abs(upDown.w);
++        float std2 = 2.181818 / sum;
++        vec2 aWY  = weightY(pl.x,        pl.y + 1.0,  upDown.x, std2);
++        aWY      += weightY(pl.x - 1.0,  pl.y + 1.0,  upDown.y, std2);
++        aWY      += weightY(pl.x - 1.0,  pl.y - 2.0,  upDown.z, std2);
++        aWY      += weightY(pl.x,        pl.y - 2.0,  upDown.w, std2);
++        aWY      += weightY(pl.x + 1.0,  pl.y - 1.0,  left.x,   std2);
++        aWY      += weightY(pl.x,        pl.y - 1.0,  left.y,   std2);
++        aWY      += weightY(pl.x,        pl.y,         left.z,   std2);
++        aWY      += weightY(pl.x + 1.0,  pl.y,         left.w,   std2);
++        aWY      += weightY(pl.x - 1.0,  pl.y - 1.0,  right.x,  std2);
++        aWY      += weightY(pl.x - 2.0,  pl.y - 1.0,  right.y,  std2);
++        aWY      += weightY(pl.x - 2.0,  pl.y,         right.z,  std2);
++        aWY      += weightY(pl.x - 1.0,  pl.y,         right.w,  std2);
++        float finalY = aWY.y / aWY.x;
++        float maxY = max(max(left.y,  left.z),  max(right.x, right.w));
++        float minY = min(min(left.y,  left.z),  min(right.x, right.w));
++        finalY = clamp(EdgeSharpness * finalY, minY, maxY);
++        float deltaY = clamp(finalY - color.w, -23.0 / 255.0, 23.0 / 255.0);
++        color.xyz = clamp(color.xyz + vec3(deltaY), 0.0, 1.0);
++    }
++    gl_FragColor = vec4(color.xyz, 1.0);
++}
++)GLSL";
++            osg::ref_ptr<osg::Program> sgsrProgram = new osg::Program;
++            sgsrProgram->addShader(new osg::Shader(osg::Shader::VERTEX, sgsrVert));
++            sgsrProgram->addShader(new osg::Shader(osg::Shader::FRAGMENT, sgsrFrag));
++            mSgsrStateSet = new osg::StateSet;
++            mSgsrStateSet->setAttributeAndModes(sgsrProgram);
++            mSgsrStateSet->addUniform(new osg::Uniform("ps0", 0));
++            mSgsrViewportInfo    = new osg::Uniform("ViewportInfo",  osg::Vec4f(0, 0, 1, 1));
++            mSgsrEdgeSharpness   = new osg::Uniform("EdgeSharpness", 2.0f);
++            mSgsrStateSet->addUniform(mSgsrViewportInfo);
++            mSgsrStateSet->addUniform(mSgsrEdgeSharpness);
++        }
++#endif
+     }
+ 
+     void PingPongCanvas::setPasses(Fx::DispatchArray&& passes)
+@@ -148,6 +258,27 @@
+         if (filtered.empty() || !mPostprocessing)
+         {
+ #ifdef ANDROID
++            // RENDER_SCALE_SGSR1: upscale the scene texture to the window
++            if (mRenderScaled && !Stereo::getMultiview())
++            {
++                float w = static_cast<float>(mTextureScene->getTextureWidth());
++                float h = static_cast<float>(mTextureScene->getTextureHeight());
++                bool useSgsr = (mUpscaler == 1) && mSgsrStateSet;
++                if (useSgsr)
++                {
++                    mSgsrViewportInfo->set(osg::Vec4f(1.0f/w, 1.0f/h, w, h));
++                    mSgsrEdgeSharpness->set(mSharpness);
++                    state.pushStateSet(mSgsrStateSet);
++                }
++                else
++                    state.pushStateSet(mFallbackStateSet);
++                state.apply();
++                state.applyTextureAttribute(0, mTextureScene);
++                resolveViewport->apply(state);
++                drawGeometry(renderInfo);
++                state.popStateSet();
++                return;
++            }
+             if (mAndroidGammaStateSet && !Stereo::getMultiview())
+             {
+                 state.pushStateSet(mAndroidGammaStateSet);
+@@ -211,7 +342,8 @@
+ 
+             mLuminanceCalculator->dirty(mTextureScene->getTextureWidth(), mTextureScene->getTextureHeight());
+ 
+-            if (Stereo::getStereo())
++            if (Stereo::getStereo() || mRenderScaled)
++                // RENDER_SCALE_SGSR1: viewport needed for scene-size rendering pass
+                 mRenderViewport
+                     = new osg::Viewport(0, 0, mTextureScene->getTextureWidth(), mTextureScene->getTextureHeight());
+             else
+@@ -362,8 +494,10 @@
+ 
+                     lastApplied = pass.mRenderTarget->getHandle(state.getContextID());
+                 }
+-                else if (pass.mResolve && index == filtered.back())
++                else if (pass.mResolve && index == filtered.back() && !mRenderScaled)
+                 {
++                    // RENDER_SCALE_SGSR1: when scaled, don't resolve to screen here;
++                    // fall through to lastPass so the result stays in a scene-sized FBO.
+                     bindDestinationFbo();
+                     if (!destinationFbo && !Stereo::getMultiview())
+                     {
+@@ -433,6 +567,40 @@
+         }
+ #endif
+ 
++#ifdef ANDROID
++        // RENDER_SCALE_SGSR1: upscale the final scene-sized result to the window
++        if (mRenderScaled && !Stereo::getMultiview())
++        {
++            // Find the texture that holds the final scene-sized result.
++            // If nothing was drawn into an FBO (no passes), use mTextureScene.
++            osg::Texture* finalTex = nullptr;
++            if (lastShader != 0)
++                finalTex = (osg::Texture*)(
++                    mFbos[lastShader - GL_COLOR_ATTACHMENT0_EXT]
++                        ->getAttachment(osg::Camera::COLOR_BUFFER0).getTexture());
++            else
++                finalTex = mTextureScene.get();
++            float w = static_cast<float>(mTextureScene->getTextureWidth());
++            float h = static_cast<float>(mTextureScene->getTextureHeight());
++            bool useSgsr = (mUpscaler == 1) && mSgsrStateSet;
++            bindDestinationFbo();
++            resolveViewport->apply(state);
++            if (useSgsr)
++            {
++                mSgsrViewportInfo->set(osg::Vec4f(1.0f/w, 1.0f/h, w, h));
++                mSgsrEdgeSharpness->set(mSharpness);
++                state.pushStateSet(mSgsrStateSet);
++            }
++            else
++                state.pushStateSet(mFallbackStateSet);
++            state.apply();
++            state.applyTextureAttribute(0, finalTex);
++            drawGeometry(renderInfo);
++            state.popStateSet();
++            state.apply();
++            lastApplied = destinationHandle;
++        }
++#endif
+         if (Stereo::getMultiview())
+         {
+             ext->glBindFramebuffer(GL_DRAW_FRAMEBUFFER_EXT, 0);
+--- omw-base/apps/openmw/mwrender/pingpongcanvas.hpp	2026-11-15 21:41:35.566738125 -0500
++++ b/apps/openmw/mwrender/pingpongcanvas.hpp	2026-11-15 21:32:56.758478198 -0500
+@@ -53,10 +53,21 @@
+         void setCalculateAvgLum(bool enabled) { mAvgLum = enabled; }
+ 
+         void setPostProcessing(bool enabled) { mPostprocessing = enabled; }
++        // RENDER_SCALE_SGSR1
++        void setRenderScaled(bool v) { mRenderScaled = v; }
++        void setUpscaler(int v)      { mUpscaler = v; }
++        void setSharpness(float v)   { mSharpness = v; }
+ 
+         const osg::ref_ptr<osg::Texture>& getSceneTexture(size_t frameId) const { return mTextureScene; }
+ 
+     private:
++        // RENDER_SCALE_SGSR1
++        bool  mRenderScaled = false;
++        int   mUpscaler     = 1;      // 1=sgsr1, 0=bilinear
++        float mSharpness    = 2.0f;
++        mutable osg::ref_ptr<osg::Uniform> mSgsrViewportInfo;
++        mutable osg::ref_ptr<osg::Uniform> mSgsrEdgeSharpness;
++        mutable osg::ref_ptr<osg::StateSet> mSgsrStateSet;
+         bool mAvgLum = false;
+         bool mPostprocessing = false;
+ 
